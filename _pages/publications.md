@@ -5,12 +5,19 @@ permalink: /publications/
 author_profile: true
 ---
 
-{% if site.author.googlescholar %}
-  <div class="wordwrap">You can also find my articles on <a href="{{site.author.googlescholar}}">my Google Scholar profile</a>.</div>
-{% endif %}
+You can find my articles on [https://webapps.unitn.it/du/en/Persona/PER0220509/Pubblicazioni](my university profile).
 
-{% include base_path %}
+[//]: # ({% if site.author.googlescholar %})
 
-{% for post in site.publications reversed %}
-  {% include archive-single.html %}
-{% endfor %}
+[//]: # (  <div class="wordwrap">You can also find my articles on <a href="{{https://webapps.unitn.it/du/en/Persona/PER0220509/Pubblicazioni}}">my university profile</a>.</div>)
+
+[//]: # ({% endif %})
+
+[//]: # ({% include base_path %})
+
+[//]: # ()
+[//]: # ({% for post in site.publications reversed %})
+
+[//]: # (  {% include archive-single.html %})
+
+[//]: # ({% endfor %})
