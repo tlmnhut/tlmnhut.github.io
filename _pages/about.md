@@ -27,4 +27,4 @@ at ICLR 2024 Workshop on Representational Alignment ([Re-Align](https://represen
 
 Publications
 ======
-You can find my articles on [my university profile](https://webapps.unitn.it/du/en/Persona/PER0220509/Pubblicazioni).
+You can find my articles on [my Google Scholar profile](https://scholar.google.com/citations?user=vs1cgLcAAAAJ&hl=en).

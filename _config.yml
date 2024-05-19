@@ -28,11 +28,11 @@ author:
   location         : "Rovereto, Italy"
   employer         : "University of Trento"
   uri              : "https://webapps.unitn.it/du/en/Persona/PER0220509"
-  email            : "URL above"
+  email            : "see the university website above"
 
   # Academic websites
   arxiv            : # URL - Update with the correct link to your profile
-  googlescholar    : # "https://scholar.google.com/citations?user=PS_CX0AAAAAJ"
+  googlescholar    : "https://scholar.google.com/citations?user=vs1cgLcAAAAJ&hl=en"
   impactstory      : # URL
   orcid            : "https://orcid.org/0009-0000-8758-9257"
   pubmed           : # "https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
