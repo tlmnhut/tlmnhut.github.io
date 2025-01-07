@@ -9,11 +9,11 @@ redirect_from:
 ---
 
 I am a 4<sup>th</sup> year PhD student in computational cognitive science, working with professor [Uri Hasson](http://hasson.org/) at
-Center for Mind/Brain Sciences ([CIMeC](https://www.cimec.unitn.it/en)), University of Trento.
+Center for Mind/Brain Sciences ([CIMeC](https://www.cimec.unitn.it/en)), University of [Trento](https://www.unitn.it/en).
 
 I am interested in the intersection of machine and human intelligence. My research topics aim at discovering the
 representational geometries in deep neural networks and in behavior/brain data.
-Specifically, I study the interactions among the two systems and how to describe them in sparse, low dimensional structures.
+Specifically, I study the alignment between the two systems and how to describe them in sparse, low dimensional structures.
 The methods include Representational Similarity Analysis, deep network pruning, feature selection, and some explainable AI (e.g.
 feature visualisation, saliency maps).
 
