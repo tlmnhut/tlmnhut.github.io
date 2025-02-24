@@ -11,25 +11,25 @@ redirect_from:
 I am a 4<sup>th</sup> year PhD student in computational cognitive science, working with professor [Uri Hasson](http://hasson.org/) at
 Center for Mind/Brain Sciences ([CIMeC](https://www.cimec.unitn.it/en)), University of [Trento](https://www.unitn.it/en).
 
-I am interested in the intersection of machine and human intelligence. My research topics aim at discovering the
-representational geometries in deep neural networks and in behavior/brain data.
-Specifically, I study the alignment between the two systems and how to describe them in sparse, low dimensional structures.
-The methods include Representational Similarity Analysis, deep network pruning, feature selection, and some explainable AI (e.g.
-feature visualisation, saliency maps).
+My research is at the intersection of AI and cognitive neuroscience, focusing on two topics:
+1. **Alignment of AI models with Human Cognition**: Using pruning techniques and explainable AI, I study how deep neural networks
+represent information and how their representations align with human behavior and brain data.
+2. **Topographic Models**: I explore models that simulate the spatial and functional organization of the brain,
+aiming to create more biologically plausible neural networks for cognitive research.
 
-I am also a member of the [PeARS project](https://pearsproject.org/), a decentralized
-search engine that can run locally on your machine with full control of user privacy :)
+I am also a member of the [PeARS project](https://pearsproject.org/), a decentralized search engine designed
+to run locally on your machine with full control over privacy :)
 
 News
 ======
-- 14 December 2024: I will present online my recent work on [pruning deep networks for modeling number sense](https://openreview.net/pdf?id=n5cV83qUrs)
-at [NeurIPS Workshop on Behavioral Machine Learning](https://sites.google.com/view/behavioralml/).
+- 18 May 2025: I will give a talk on [Weight-similarity Topographic Networks](https://www.visionsciences.org/presentation/?id=2208)
+at the 25th Annual Meeting of the Vision Sciences Society (VSS).
 
 Publications
 ======
 You can find my articles on [my Google Scholar profile](https://scholar.google.com/citations?user=vs1cgLcAAAAJ&hl=en).
 
-Plus the recent conference abstracts:
+Plus the conference abstracts:
 1. **Truong, N.**, & Hasson, U. (2024). *Pruning sparse features for cognitive modeling.*
 In Conference on Cognitive Computational Neuroscience 2024. [[pdf]](https://2024.ccneuro.org/pdf/82_Paper_authored_CCN_2024.pdf)
 2. **Truong, N.**, Bavaresco, A., & Hasson, U. (2023). *The Impact of Rarely-firing Nodes in Neural Networks on Representational Geometry and Predictions of Human Similarity Judgments.*
