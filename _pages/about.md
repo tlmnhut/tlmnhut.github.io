@@ -22,5 +22,8 @@ to run locally on your machine with full control over privacy :)
 
 News
 ======
-- 18 May 2025: I will give a talk on [Weight-similarity Topographic Networks](https://www.visionsciences.org/presentation/?id=2208)
-at the 25th Annual Meeting of the Vision Sciences Society (VSS).
+- 4 August 2025: My preprint [Improved Robustness and Functional Localization in Topographic CNNs Through Weight Similarity
+](https://arxiv.org/abs/2508.00043) is uploaded!
+- 31 July 2025: New paper on [Investigation of Numerosity Representation in Convolution Neural Networks](https://openreview.net/forum?id=AJmt5Cb1Nr),
+accepted in the Proceedings of the
+8th Annual Conference on Cognitive Computational Neuroscience ([CCN 2025](https://2025.ccneuro.org/)).
