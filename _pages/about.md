@@ -22,8 +22,9 @@ to run locally on your machine with full control over privacy :)
 
 News
 ======
-- 4 August 2025: My preprint [Improved Robustness and Functional Localization in Topographic CNNs Through Weight Similarity
-](https://arxiv.org/abs/2508.00043) is uploaded!
+- 7 August 2025: Preprint [Investigating action topography in visual cortex and deep artificial neural networks](https://www.biorxiv.org/content/10.1101/2025.08.05.668643v1),
+a work with [Davide Cortinovis](https://davidecortinovis-droid.github.io/).
+- 4 August 2025: My preprint [Improved Robustness and Functional Localization in Topographic CNNs Through Weight Similarity](https://arxiv.org/abs/2508.00043) is uploaded!
 - 31 July 2025: New paper on [Investigation of Numerosity Representation in Convolution Neural Networks](https://openreview.net/forum?id=AJmt5Cb1Nr),
 accepted in the Proceedings of the
 8th Annual Conference on Cognitive Computational Neuroscience ([CCN 2025](https://2025.ccneuro.org/)).
