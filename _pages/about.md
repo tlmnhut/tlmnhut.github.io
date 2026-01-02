@@ -17,14 +17,13 @@ represent information and how their representations align with human behavior an
 2. **Topographic Models**: I explore models that simulate the spatial and functional organization of the brain,
 aiming to create more biologically plausible neural networks for cognitive research.
 
-I am also a member of the [PeARS project](https://pearsproject.org/), a decentralized search engine designed
+I was also a member of the [PeARS project](https://pearsproject.org/), a decentralized search engine designed
 to run locally on your machine with full control over privacy :)
 
 News
 ======
-- 7 August 2025: Preprint [Investigating action topography in visual cortex and deep artificial neural networks](https://www.biorxiv.org/content/10.1101/2025.08.05.668643v1),
-a work with [Davide Cortinovis](https://davidecortinovis-droid.github.io/).
+- 21 December 2025: The paper [Investigating action topography in visual cortex and deep artificial neural networks](https://www.nature.com/articles/s41467-025-67855-6),
+a work with [Davide Cortinovis](https://davidecortinovis-droid.github.io/), passed Nature Communications!
+- 10 December 2025: The paper of [Anna Bavaresco](https://annabavaresco.github.io/) in which I am a coauthor - [Modeling Human Concepts with Subspaces in Deep Vision Models](https://doi.org/10.1145/3768340), was accepted in the ACM Transactions on Interactive Intelligent Systems (TIIS).
 - 4 August 2025: My preprint [Improved Robustness and Functional Localization in Topographic CNNs Through Weight Similarity](https://arxiv.org/abs/2508.00043) is uploaded!
-- 31 July 2025: New paper on [Investigation of Numerosity Representation in Convolution Neural Networks](https://openreview.net/forum?id=AJmt5Cb1Nr),
-accepted in the Proceedings of the
-8th Annual Conference on Cognitive Computational Neuroscience ([CCN 2025](https://2025.ccneuro.org/)).
+
