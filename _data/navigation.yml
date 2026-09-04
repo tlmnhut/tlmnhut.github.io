@@ -4,8 +4,6 @@ main:
     url: "/"
   - title: "Research"
     url: "/#research"
-    # also shown as the active page on any /research/<theme>/ page
-    active_when: "/research/"
   - title: "CV"
     url: "https://drive.google.com/file/d/1B_BtSe4qluD6mvej5ZN-EI3nj6IV7AWw/view?usp=sharing"
     external: true

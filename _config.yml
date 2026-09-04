@@ -3,9 +3,7 @@
 # ---------------------------------------------------------------------------
 title       : "Nhut Truong"
 description : >-
-  Nhut Truong is a PhD student in computational cognitive science at the Center for
-  Mind/Brain Sciences (CIMeC), University of Trento, working on the alignment of AI
-  models with human cognition and on topographic models of the brain.
+  Postdoctoral researcher in computational cognitive science at the University of Trento.
 url         : "https://tlmnhut.github.io"
 baseurl     : ""
 repository  : "tlmnhut/tlmnhut.github.io"
@@ -15,7 +13,7 @@ timezone    : "Europe/Rome"
 author:
   name   : "Nhut Truong"
   avatar : "nhut_july24.jpg"
-  bio    : "PhD student in computational cognitive science, CIMeC, University of Trento"
+  bio    : "Researcher in Computational Cognitive Science, the University of Trento"
 
 google_site_verification: "dSlV_xTOsJ1MohsYy6Aqr3c8SHEl3N2gBDEO83P2KyA"
 
@@ -28,15 +26,11 @@ permalink   : /:title/
 
 collections:
   projects:
-    output    : true
-    permalink : /research/:name/
+    # No standalone pages: the themes are rendered inline on the home page.
+    # The files still load, so site.projects works.
+    output    : false
 
 defaults:
-  - scope:
-      path : ""
-      type : projects
-    values:
-      layout : project
   - scope:
       path : "_pages"
       type : pages
