@@ -1,22 +1,26 @@
-# main links links
+# Masthead links. Anchors are absolute so they also work from a project page.
 main:
-#  - title: "Talks"
-#    url: /talks/
-
-#  - title: "Teaching"
-#    url: /teaching/
-    
-#  - title: "Portfolio"
-#    url: /portfolio/
-        
-#  - title: "Blog Posts"
-#    url: /year-archive/
-    
+  - title: "Research"
+    url: "/#research"
+  - title: "News"
+    url: "/#news"
   - title: "CV"
     url: "https://drive.google.com/file/d/1B_BtSe4qluD6mvej5ZN-EI3nj6IV7AWw/view?usp=sharing"
-    
-#  - title: "Guide"
-#    url: /markdown/
+    external: true
 
-  - title: "Publications"
-    url: /publications/
+# Text links under the profile photo on the home page.
+academic:
+  - title: "Google Scholar"
+    url: "https://scholar.google.com/citations?user=vs1cgLcAAAAJ&hl=en"
+  - title: "ORCID"
+    url: "https://orcid.org/0009-0000-8758-9257"
+  - title: "GitHub"
+    url: "https://github.com/tlmnhut"
+  - title: "Bluesky"
+    url: "https://bsky.app/profile/tlmnhut.bsky.social"
+  - title: "LinkedIn"
+    url: "https://www.linkedin.com/in/nhuttruong"
+  - title: "CV"
+    url: "https://drive.google.com/file/d/1B_BtSe4qluD6mvej5ZN-EI3nj6IV7AWw/view?usp=sharing"
+  - title: "University page"
+    url: "https://webapps.unitn.it/du/en/Persona/PER0220509"

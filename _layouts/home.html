@@ -1,0 +1,25 @@
+---
+layout: default
+---
+{% include profile.html %}
+
+{{ content }}
+
+{%- assign news = site.data.news | sort: 'date' | reverse %}
+{%- if news.size > 0 %}
+<h2 class="section-title" id="news">News</h2>
+{%- for item in news %}
+<div class="news-item">
+  <span class="news-date">{{ item.date | date: "%-d %B %Y" }}</span>
+  <div class="news-body">{{ item.text | markdownify }}</div>
+</div>
+{%- endfor %}
+{%- endif %}
+
+{%- assign projects = site.projects | sort: 'order' %}
+{%- if projects.size > 0 %}
+<h2 class="section-title" id="research">Research</h2>
+{%- for project in projects %}
+{% include project-card.html project=project %}
+{%- endfor %}
+{%- endif %}

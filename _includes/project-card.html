@@ -1,0 +1,16 @@
+{%- comment -%} One research theme, summarised. Expects include.project. {%- endcomment -%}
+{%- assign p = include.project -%}
+<article class="project">
+  <div class="project-head">
+    <h3 class="project-title"><a href="{{ p.url | relative_url }}">{{ p.title }}</a></h3>
+    {%- if p.years %}<span class="project-years">{{ p.years }}</span>{% endif %}
+  </div>
+
+  {%- if p.summary %}
+  <p class="project-summary">{{ p.summary | markdownify | remove: '<p>' | remove: '</p>' | strip }}</p>
+  {%- endif %}
+
+  {%- if p.papers %}{% include papers.html papers=p.papers %}{% endif %}
+
+  <p class="project-more"><a href="{{ p.url | relative_url }}">More on this &rarr;</a></p>
+</article>

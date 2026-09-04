@@ -1,0 +1,17 @@
+# Newest first is handled by the template; order here does not matter.
+- date: 2025-12-21
+  text: >-
+    The paper [Investigating action topography in visual cortex and deep artificial neural
+    networks](https://www.nature.com/articles/s41467-025-67855-6), a work with
+    [Davide Cortinovis](https://davidecortinovis-droid.github.io/), passed Nature Communications!
+
+- date: 2025-12-10
+  text: >-
+    The paper of [Anna Bavaresco](https://annabavaresco.github.io/) in which I am a coauthor —
+    [Modeling Human Concepts with Subspaces in Deep Vision Models](https://doi.org/10.1145/3768340) —
+    was accepted in the ACM Transactions on Interactive Intelligent Systems (TIIS).
+
+- date: 2025-08-04
+  text: >-
+    My preprint [Improved Robustness and Functional Localization in Topographic CNNs Through
+    Weight Similarity](https://arxiv.org/abs/2508.00043) is uploaded!

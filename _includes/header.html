@@ -1,0 +1,13 @@
+<header class="masthead">
+  <div class="wrap masthead-inner">
+    <p class="masthead-title"><a href="{{ '/' | relative_url }}">{{ site.title }}</a></p>
+    <nav class="masthead-nav" aria-label="Main">
+      {%- for item in site.data.navigation.main %}
+      <a href="{{ item.url | relative_url }}"
+         {%- if item.external %} target="_blank" rel="noopener"{% endif %}
+         {%- if page.url == item.url %} class="active"{% endif %}>{{ item.title }}</a>
+      {%- endfor %}
+      {% include theme-toggle.html %}
+    </nav>
+  </div>
+</header>

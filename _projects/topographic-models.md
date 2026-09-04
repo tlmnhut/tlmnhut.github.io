@@ -1,0 +1,36 @@
+---
+title: "Topographic models"
+years: "2024 – present"
+order: 1
+summary: >-
+  Models that simulate the spatial and functional organization of the brain, aiming to create
+  more biologically plausible neural networks for cognitive research.
+papers:
+  - authors: "Cortinovis, D., **Truong, N.**, Op de Beeck, H., & Bracci, S."
+    title: "Investigating action topography in visual cortex and deep artificial neural networks"
+    venue: "Nature Communications"
+    year: 2025
+    links:
+      doi: "https://www.nature.com/articles/s41467-025-67855-6"
+  - authors: "**Truong, N.**, & Hasson, U."
+    title: "Beyond topography: Topographic regularization improves robustness and reshapes representations in convolutional neural networks"
+    venue: "arXiv preprint"
+    year: 2025
+    links:
+      arxiv: "https://arxiv.org/abs/2508.00043"
+  - authors: "**Truong, N.**, & Hasson, U."
+    title: "Weight-similarity topographic networks improve retinotopy and noise robustness"
+    venue: "Journal of Vision (VSS abstract)"
+    year: 2025
+    links:
+      html: "https://www.visionsciences.org/presentation/?id=2208"
+---
+
+Cortex is organized spatially: nearby neurons tend to respond to related things. Standard
+convolutional networks have no such constraint — any unit may sit anywhere. Topographic models add
+one, so that spatial position in the network carries meaning.
+
+I study what that constraint buys. Adding a weight-similarity term during training produces
+retinotopic organization and functional clustering without supervision, and the resulting networks
+are measurably more robust to noise. The same lens applies in the other direction: comparing the
+topography that emerges in these models against the topography measured in human visual cortex.

@@ -1,0 +1,313 @@
+// ---------------------------------------------------------------------------
+// Site furniture: masthead, profile, news, research themes, footer.
+// Lato is used for everything that is not prose.
+// ---------------------------------------------------------------------------
+
+// --- Masthead --------------------------------------------------------------
+
+.masthead {
+  font-family: $sans-font;
+  border-bottom: 1px solid var(--rule);
+  margin-bottom: 3rem;
+
+  .masthead-inner {
+    display: flex;
+    align-items: baseline;
+    gap: 1.2rem;
+    padding-top: 1.6rem;
+    padding-bottom: 1.2rem;
+  }
+}
+
+.masthead-title {
+  font-family: $sans-font;
+  font-size: 1.15rem;
+  font-weight: bold;
+  letter-spacing: 0.01em;
+  margin: 0;
+  line-height: 1;
+
+  a { text-decoration: none; }
+  a:hover { color: var(--accent); }
+}
+
+.masthead-nav {
+  margin-left: auto;
+  display: flex;
+  align-items: baseline;
+  gap: 1.1rem;
+  font-size: 1rem;
+
+  a {
+    text-decoration: none;
+    color: var(--muted);
+
+    &:hover, &.active { color: var(--accent); }
+  }
+}
+
+// --- Theme toggle ----------------------------------------------------------
+
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+  background: none;
+  border: 0;
+  border-radius: 4px;
+  padding: 0.3rem;
+  cursor: pointer;
+  color: var(--muted);
+  line-height: 0;
+
+  &:hover { color: var(--accent); background: var(--toggle-hover); }
+
+  svg { width: 16px; height: 16px; }
+
+  .icon-moon { display: none; }
+}
+
+:root[data-theme="dark"] .theme-toggle {
+  .icon-sun  { display: none; }
+  .icon-moon { display: block; }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .theme-toggle {
+    .icon-sun  { display: none; }
+    .icon-moon { display: block; }
+  }
+}
+
+:root[data-theme="light"] .theme-toggle {
+  .icon-sun  { display: block; }
+  .icon-moon { display: none; }
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+// --- Profile (home page only) ----------------------------------------------
+
+.profile {
+  display: flex;
+  gap: 1.6rem;
+  align-items: flex-start;
+  margin-bottom: 2.4rem;
+}
+
+.profile-photo {
+  flex: 0 0 auto;
+  width: 150px;
+
+  img { border-radius: 2px; }
+}
+
+.profile-body { flex: 1 1 auto; min-width: 0; }
+
+.profile-name {
+  font-size: 2.2rem;
+  margin: 0 0 0.4rem;
+  line-height: 1.05;
+}
+
+.profile-affiliation {
+  font-family: $sans-font;
+  font-size: 1.02rem;
+  line-height: 1.5;
+  color: var(--muted);
+  margin: 0 0 0.9rem;
+}
+
+.profile-links {
+  font-family: $sans-font;
+  font-size: 1rem;
+  line-height: 1.9;
+
+  a {
+    text-decoration: none;
+    color: var(--muted);
+    border-bottom: 1px solid var(--rule);
+
+    &:hover { color: var(--accent); border-bottom-color: var(--accent); }
+  }
+
+  .sep { color: var(--rule); margin: 0 0.45rem; }
+}
+
+@media (max-width: 560px) {
+  .profile { display: block; }
+  .profile-photo { width: 120px; margin-bottom: 1.2rem; }
+}
+
+// --- Page meta (a subtitle line under an h1) --------------------------------
+
+.page-meta {
+  font-family: $sans-font;
+  font-size: 1.02rem;
+  color: var(--muted);
+  margin-top: -1rem;
+  margin-bottom: 1.6rem;
+}
+
+// --- Section headings ------------------------------------------------------
+
+.section-title {
+  font-family: $sans-font;
+  font-style: normal;
+  font-size: 0.92rem;
+  font-weight: bold;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-top: 3.4rem;
+  margin-bottom: 1.4rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+// --- News ------------------------------------------------------------------
+
+.news-item { margin-bottom: 1.5rem; }
+
+.news-date {
+  font-family: $sans-font;
+  font-size: 0.9rem;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+  display: block;
+  margin-bottom: 0.15rem;
+}
+
+.news-body {
+  font-size: 1.3rem;
+  line-height: 1.75;
+
+  p { margin: 0; font-size: inherit; line-height: inherit; }
+}
+
+// --- Research themes -------------------------------------------------------
+
+.project { margin-bottom: 3rem; }
+
+.project-head {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: 0.4rem;
+  margin-bottom: 1rem;
+}
+
+.project-title {
+  font-size: 1.55rem;
+  font-style: normal;
+  margin: 0;
+  line-height: 1.2;
+
+  a { text-decoration: none; }
+  a:hover { color: var(--accent); }
+}
+
+.project-years {
+  font-family: $sans-font;
+  font-size: 0.92rem;
+  color: var(--muted);
+  margin-left: auto;
+  white-space: nowrap;
+}
+
+.project-summary {
+  margin-top: 0;
+  margin-bottom: 1.4rem;
+}
+
+.project-more {
+  font-family: $sans-font;
+  font-size: 0.95rem;
+
+  a { text-decoration: none; color: var(--muted); }
+  a:hover { color: var(--accent); }
+}
+
+// --- Papers within a theme -------------------------------------------------
+
+.papers {
+  list-style: none;
+  padding-left: 1.4rem;
+  margin: 0 0 1.2rem;
+  border-left: 1px solid var(--rule);
+}
+
+.paper {
+  margin-bottom: 1.1rem;
+  font-size: 1.2rem;
+  line-height: 1.55;
+  padding-left: 0;
+}
+
+.paper-title { display: block; }
+
+.paper-authors {
+  display: block;
+  font-size: 1.08rem;
+  color: var(--muted);
+
+  strong { color: var(--text); font-weight: bold; }
+}
+
+.paper-venue {
+  font-family: $sans-font;
+  font-size: 0.92rem;
+  color: var(--muted);
+  font-style: italic;
+}
+
+.paper-links {
+  font-family: $sans-font;
+  font-size: 0.88rem;
+  margin-left: 0.4rem;
+
+  a {
+    text-decoration: none;
+    color: var(--muted);
+    border-bottom: 1px solid var(--rule);
+    margin-right: 0.35rem;
+
+    &:hover { color: var(--accent); border-bottom-color: var(--accent); }
+  }
+}
+
+// --- Footer ----------------------------------------------------------------
+
+.page-footer {
+  font-family: $sans-font;
+  font-size: 0.9rem;
+  color: var(--muted);
+  border-top: 1px solid var(--rule);
+  margin-top: 4rem;
+  padding-top: 1.2rem;
+  padding-bottom: 3rem;
+
+  a { text-decoration: none; }
+  a:hover { color: var(--accent); }
+}
+
+// --- Back link -------------------------------------------------------------
+
+.backlink {
+  font-family: $sans-font;
+  font-size: 0.95rem;
+  margin-top: 3rem;
+
+  a { text-decoration: none; color: var(--muted); }
+  a:hover { color: var(--accent); }
+}
