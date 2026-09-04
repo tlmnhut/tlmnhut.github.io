@@ -1,7 +1,12 @@
 ---
 layout: default
 ---
-{%- comment -%} Years first: they hang in the left gutter beside the title. {%- endcomment -%}
+{%- comment -%}
+  Years first: they hang in the left gutter beside the title.
+  Papers are not rendered. The `papers:` front matter is kept in each
+  _projects/*.md file, so restoring the list is one include away:
+  {% raw %}{% include papers.html papers=page.papers %}{% endraw %}
+{%- endcomment -%}
 {%- if page.years %}<p class="page-meta">{{ page.years }}</p>{% endif %}
 <h1>{{ page.title }}</h1>
 
@@ -10,10 +15,5 @@ layout: default
 {%- endif %}
 
 {{ content }}
-
-{%- if page.papers %}
-<h2 class="section-title">Papers</h2>
-{% include papers.html papers=page.papers %}
-{%- endif %}
 
 <p class="backlink"><a href="{{ '/#research' | relative_url }}">&larr; All research themes</a></p>

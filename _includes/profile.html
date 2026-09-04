@@ -1,18 +1,17 @@
+{%- comment -%}
+  Links live inside .profile-body so the body can stretch to the photo's height
+  and push them down to sit level with the bottom of the photo.
+{%- endcomment -%}
 <div class="profile">
+  <div class="profile-body">
+    <h1 class="profile-name">{{ site.author.name }}</h1>
+    <p class="profile-affiliation">{{ site.author.bio }}</p>
+    <p class="profile-links">
+      {% for item in site.data.navigation.academic %}{% unless forloop.first %} <span class="sep">&middot;</span> {% endunless %}<a href="{{ item.url }}"{% unless item.url contains 'mailto:' %} target="_blank" rel="noopener"{% endunless %}>{{ item.title }}</a>{% endfor %}
+    </p>
+  </div>
   <div class="profile-photo">
     <img src="{{ site.author.avatar | prepend: '/images/' | relative_url }}"
          alt="{{ site.author.name }}" width="1059" height="1060" fetchpriority="high">
   </div>
-  <div class="profile-body">
-    <h1 class="profile-name">{{ site.author.name }}</h1>
-    <p class="profile-affiliation">{{ site.author.bio }}</p>
-  </div>
 </div>
-{%- comment -%}
-  Links sit below the photo row so they get the full measure. Each link is
-  nowrap so a service name never splits, and real whitespace is kept around the
-  separators so the row still has somewhere to break on a narrow screen.
-{%- endcomment -%}
-<p class="profile-links">
-  {% for item in site.data.navigation.academic %}{% unless forloop.first %} <span class="sep">&middot;</span> {% endunless %}<a href="{{ item.url }}"{% unless item.url contains 'mailto:' %} target="_blank" rel="noopener"{% endunless %}>{{ item.title }}</a>{% endfor %}
-</p>

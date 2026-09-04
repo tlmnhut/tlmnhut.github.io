@@ -19,10 +19,8 @@
 // section labels, rather than indented to the prose column. Capped at the
 // measure so the line stays readable even though the row is wider.
 .content-grid > .profile,
-.content-grid > .profile-links,
 .content-grid > .intro        { grid-column: 1 / -1; }
 
-.content-grid > .profile-links,
 .content-grid > .intro        { max-width: $measure; }
 
 .news-item > .news-date       { grid-column: 1; }
@@ -37,7 +35,6 @@
   .content-grid > .project,
   .content-grid > .page-meta,
   .content-grid > .profile,
-  .content-grid > .profile-links,
   .content-grid > .intro,
   .news-item > .news-date,
   .news-item > .news-body,
@@ -139,7 +136,7 @@
 .profile {
   display: flex;
   gap: 1.8rem;
-  align-items: flex-start;
+  align-items: stretch;     // body grows to the photo's height
   margin-top: 3rem;
   margin-bottom: 1.4rem;
 }
@@ -147,6 +144,7 @@
 .profile-photo {
   order: 2;                 // after the text, i.e. on the right
   flex: 0 0 auto;
+  align-self: flex-start;   // photo keeps its own height
   width: 160px;
 
   img { border-radius: 2px; }
@@ -156,6 +154,8 @@
   order: 1;
   flex: 1 1 auto;
   min-width: 0;
+  display: flex;
+  flex-direction: column;
 }
 
 .profile-name {
@@ -172,10 +172,12 @@
 }
 
 .profile-links {
+  // Pushed to the bottom of the body, level with the foot of the photo.
+  margin: auto 0 0;
   font-family: $ui-font;
   font-size: 1.15rem;
   line-height: 1.85;
-  margin: 0 0 0.6rem;
+  max-width: $measure;
 
   // Never break a service name across lines.
   a { white-space: nowrap; }
@@ -269,6 +271,9 @@
 }
 
 .project-more {
+  // Both this and .project-summary are <p>, so their margins stacked to 2.8rem
+  // once the paper list between them was removed.
+  margin-top: 0;
   font-style: italic;
   font-size: 1.2rem;
 
@@ -361,9 +366,12 @@
 }
 
 @media (max-width: 520px) {
-  // Too narrow for a side-by-side row: stack, photo first.
-  .profile { display: block; margin-top: 2rem; }
-  .profile-photo { width: 124px; margin-bottom: 1.4rem; }
+  // Too narrow for a side-by-side row. Stack, and use flex order to keep the
+  // photo on top even though it comes after the text in the markup.
+  .profile { display: flex; flex-direction: column; margin-top: 2rem; }
+  .profile-photo { order: 1; width: 124px; margin-bottom: 1.4rem; }
+  .profile-body  { order: 2; display: block; }
+  .profile-links { margin-top: 1rem; }
   .profile-name { font-size: 2.6rem; }
   .profile-affiliation { font-size: 1.4rem; }
 }

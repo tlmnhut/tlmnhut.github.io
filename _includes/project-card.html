@@ -2,6 +2,7 @@
   One research theme, summarised. Expects include.project.
   The years come first so grid auto-placement puts them in the left gutter
   and the title lands beside them on the same row.
+  Papers are deliberately not listed here; the full list is on Google Scholar.
 {%- endcomment -%}
 {%- assign p = include.project -%}
 <article class="project">
@@ -11,8 +12,6 @@
   {%- if p.summary %}
   <p class="project-summary">{{ p.summary | markdownify | remove: '<p>' | remove: '</p>' | strip }}</p>
   {%- endif %}
-
-  {%- if p.papers %}{% include papers.html papers=p.papers %}{% endif %}
 
   <p class="project-more"><a href="{{ p.url | relative_url }}">More on this &rarr;</a></p>
 </article>
