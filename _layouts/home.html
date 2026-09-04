@@ -10,7 +10,7 @@ layout: default
 <h2 class="section-title" id="news">News</h2>
 {%- for item in news %}
 <div class="news-item">
-  <span class="news-date">{{ item.date | date: "%-d %B %Y" }}</span>
+  <span class="news-date">{{ item.date | date: "%-d %b %Y" }}</span>
   <div class="news-body">{{ item.text | markdownify }}</div>
 </div>
 {%- endfor %}

@@ -1,8 +1,9 @@
 ---
 layout: default
 ---
-<h1>{{ page.title }}</h1>
+{%- comment -%} Years first: they hang in the left gutter beside the title. {%- endcomment -%}
 {%- if page.years %}<p class="page-meta">{{ page.years }}</p>{% endif %}
+<h1>{{ page.title }}</h1>
 
 {%- if page.summary %}
 <p class="project-summary">{{ page.summary | markdownify | remove: '<p>' | remove: '</p>' | strip }}</p>

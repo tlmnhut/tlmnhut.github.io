@@ -1,10 +1,12 @@
-{%- comment -%} One research theme, summarised. Expects include.project. {%- endcomment -%}
+{%- comment -%}
+  One research theme, summarised. Expects include.project.
+  The years come first so grid auto-placement puts them in the left gutter
+  and the title lands beside them on the same row.
+{%- endcomment -%}
 {%- assign p = include.project -%}
 <article class="project">
-  <div class="project-head">
-    <h3 class="project-title"><a href="{{ p.url | relative_url }}">{{ p.title }}</a></h3>
-    {%- if p.years %}<span class="project-years">{{ p.years }}</span>{% endif %}
-  </div>
+  {%- if p.years %}<span class="project-years">{{ p.years }}</span>{% endif %}
+  <h3 class="project-title"><a href="{{ p.url | relative_url }}">{{ p.title }}</a></h3>
 
   {%- if p.summary %}
   <p class="project-summary">{{ p.summary | markdownify | remove: '<p>' | remove: '</p>' | strip }}</p>

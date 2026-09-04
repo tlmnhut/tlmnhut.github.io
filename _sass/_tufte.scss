@@ -25,14 +25,31 @@ body {
   font-kerning: normal;
 }
 
-// The single centred column everything lives in.
+// Page container. Holds the masthead row and the content grid.
 .wrap {
-  max-width: $measure;
+  max-width: $page-max;
   margin-left: auto;
   margin-right: auto;
-  padding-left: $gutter;
-  padding-right: $gutter;
+  padding-left: $page-pad;
+  padding-right: $page-pad;
 }
+
+// Content is a two-column grid on wide screens: labels/dates/years hang in the
+// left gutter, prose keeps its measure. One column below $two-col-min.
+.content-grid {
+  @include two-col;
+}
+
+@media (max-width: $two-col-min) {
+  .wrap { max-width: $measure; }
+  .content-grid { @include one-col; }
+}
+
+// Everything is sized in rem, so nudging the root on big monitors grows the
+// whole page proportionally: the line gets physically longer but keeps the
+// same character count, which is the readable way to use the extra width.
+@media (min-width: 1200px) { html { font-size: 16px; } }
+@media (min-width: 1600px) { html { font-size: 17px; } }
 
 // --- Headings --------------------------------------------------------------
 
