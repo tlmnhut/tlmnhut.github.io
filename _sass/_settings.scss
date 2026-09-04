@@ -70,33 +70,38 @@ $body-font: "et-book", Palatino, "Palatino Linotype", "Palatino LT STD", "Book A
 $sans-font: "LatoLatin", Lato, "Gill Sans", "Gill Sans MT", "Trebuchet MS", sans-serif;
 $code-font: Consolas, "Liberation Mono", Menlo, "DejaVu Sans Mono", monospace;
 
+// Font for nav, labels, dates and other non-prose text.
+// jekyll-theme-tufte sets all of these in the serif, which is the look we copy.
+// Set this to $sans-font to put Lato back in those places instead.
+$ui-font: $body-font;
+
 // --- Measure ---------------------------------------------------------------
-// Root is 15px and body copy is 1.4rem (21px), so 36rem ≈ 58 characters.
-$measure: 36rem;
+// Root is 15px and body copy is 1.4rem (21px), so 40rem ≈ 64 characters.
+$measure: 40rem;
 $gutter: 1.5rem;
 
 // --- Palette ---------------------------------------------------------------
-// Light is Tufte's cream. Dark is warm rather than neutral grey, so the two
-// modes read as the same site. Accent: oxblood by day, candlelit gold by night.
+// Tufte's cream #fffff8 on light and the theme's neutral #151515 / #ddd on dark.
+// Links rest in the text colour (as tufte-css does) and take the accent on hover.
 
 @mixin palette-light {
   --bg:          #fffff8;
   --text:        #111111;
   --muted:       #6b6b63;
-  --rule:        #d8d8ce;
+  --rule:        #cccccc;
   --accent:      #7d2f2f;
   --code-bg:     #f4f2e4;
   --toggle-hover:#eeece0;
 }
 
 @mixin palette-dark {
-  --bg:          #15140f;
-  --text:        #e8e4d8;
-  --muted:       #a49d8c;
-  --rule:        #33302a;
-  --accent:      #c6a86a;
-  --code-bg:     #201e18;
-  --toggle-hover:#252219;
+  --bg:          #151515;
+  --text:        #dddddd;
+  --muted:       #9a9a94;
+  --rule:        #3a3a3a;
+  --accent:      #d8b47a;
+  --code-bg:     #1e1e1e;
+  --toggle-hover:#242424;
 }
 
 // Three states: no attribute follows the OS; an explicit choice wins either way.

@@ -6,11 +6,13 @@
   <div class="profile-body">
     <h1 class="profile-name">{{ site.author.name }}</h1>
     <p class="profile-affiliation">{{ site.author.bio }}</p>
-    <p class="profile-links">
-      {%- for item in site.data.navigation.academic -%}
-      {%- unless forloop.first %}<span class="sep">&middot;</span>{% endunless -%}
-      <a href="{{ item.url }}"{% unless item.url contains 'mailto:' %} target="_blank" rel="noopener"{% endunless %}>{{ item.title }}</a>
-      {%- endfor -%}
-    </p>
   </div>
 </div>
+{%- comment -%}
+  Links sit below the photo row so they get the full measure. Each link is
+  nowrap so a service name never splits, and real whitespace is kept around the
+  separators so the row still has somewhere to break on a narrow screen.
+{%- endcomment -%}
+<p class="profile-links">
+  {% for item in site.data.navigation.academic %}{% unless forloop.first %} <span class="sep">&middot;</span> {% endunless %}<a href="{{ item.url }}"{% unless item.url contains 'mailto:' %} target="_blank" rel="noopener"{% endunless %}>{{ item.title }}</a>{% endfor %}
+</p>

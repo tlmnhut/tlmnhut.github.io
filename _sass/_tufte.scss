@@ -38,34 +38,43 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   font-weight: 400;
-  line-height: 1.1;
+  line-height: 1;
   text-wrap: balance;
 }
 
 h1 {
-  font-size: 2.6rem;
-  margin-top: 0;
-  margin-bottom: 1.5rem;
+  font-size: 3.2rem;
+  margin-top: 3.4rem;
+  margin-bottom: 2rem;
 }
 
 h2 {
   font-style: italic;
-  font-size: 1.9rem;
-  margin-top: 2.6rem;
-  margin-bottom: 1.2rem;
+  font-size: 2.2rem;
+  margin-top: 3.4rem;
+  margin-bottom: 1.4rem;
 }
 
 h3 {
   font-style: italic;
-  font-size: 1.5rem;
+  font-size: 1.7rem;
   margin-top: 2rem;
   margin-bottom: 1rem;
 }
 
 h4, h5, h6 {
-  font-size: 1.3rem;
-  margin-top: 1.6rem;
+  font-size: 1.4rem;
+  margin-top: 1.8rem;
   margin-bottom: 0.8rem;
+}
+
+// The italic serif subtitle that sits under a title.
+.subtitle {
+  font-style: italic;
+  font-size: 1.8rem;
+  line-height: 1.15;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
 }
 
 // --- Body copy -------------------------------------------------------------
@@ -86,21 +95,48 @@ li { padding-left: 0.2rem; }
 sup, sub { line-height: 0; font-size: 0.75em; }
 
 // --- Links -----------------------------------------------------------------
-// Underline in the text colour, accent on hover. Simpler and more robust than
-// tufte-css's background-gradient underline, and legible in both themes.
+// tufte-css's underline: a repeating 1px gradient for the rule, two short
+// background-coloured gradients to clear the ends, and a background-coloured
+// text-shadow ringing each glyph so descenders punch through the line.
+// Driven off var(--bg) so it follows the theme instead of being hardcoded.
+
+@mixin tufte-underline {
+  text-decoration: none;
+  background:
+    linear-gradient(var(--bg), var(--bg)),
+    linear-gradient(var(--bg), var(--bg)),
+    linear-gradient(currentColor, currentColor);
+  background-size: 0.05em 1px, 0.05em 1px, 1px 1px;
+  background-repeat: no-repeat, no-repeat, repeat-x;
+  background-position: 0% 93%, 100% 93%, 0% 93%;
+  text-shadow:
+     0.03em 0 var(--bg), -0.03em 0 var(--bg),
+     0 0.03em var(--bg),  0 -0.03em var(--bg),
+     0.06em 0 var(--bg), -0.06em 0 var(--bg),
+     0.09em 0 var(--bg), -0.09em 0 var(--bg),
+     0.12em 0 var(--bg), -0.12em 0 var(--bg),
+     0.15em 0 var(--bg), -0.15em 0 var(--bg);
+}
+
+@mixin no-underline {
+  background: none;
+  text-shadow: none;
+  text-decoration: none;
+}
 
 a {
   color: inherit;
-  text-decoration: underline;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 0.14em;
-  text-decoration-color: var(--rule);
-  transition: color 0.12s ease, text-decoration-color 0.12s ease;
+  @include tufte-underline;
+  transition: color 0.12s ease;
 
-  &:hover, &:focus {
-    color: var(--accent);
-    text-decoration-color: var(--accent);
-  }
+  &:hover, &:focus { color: var(--accent); }
+}
+
+// Opt out for nav, buttons and other chrome.
+.plain-link { @include no-underline; }
+
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  a { background-position-y: 87%, 87%, 87%; }
 }
 
 // --- Rules, quotes, figures ------------------------------------------------
@@ -128,8 +164,8 @@ figure {
   margin: 2rem 0;
 
   figcaption {
-    font-family: $sans-font;
-    font-size: 1rem;
+    font-family: $ui-font;
+    font-size: 1.1rem;
     line-height: 1.5;
     color: var(--muted);
     margin-top: 0.6rem;
@@ -172,7 +208,7 @@ table {
     border-bottom: 1px solid var(--rule);
   }
 
-  th { font-family: $sans-font; font-size: 0.95rem; font-weight: bold; }
+  th { font-family: $ui-font; font-size: 0.95rem; font-weight: bold; }
 }
 
 .table-scroll { overflow-x: auto; }
@@ -193,7 +229,8 @@ table {
 
 @media (max-width: 760px) {
   html { font-size: 14px; }
-  h1 { font-size: 2.2rem; }
-  h2 { font-size: 1.7rem; }
-  h3 { font-size: 1.4rem; }
+  h1 { font-size: 2.4rem; }
+  h2 { font-size: 1.8rem; }
+  h3 { font-size: 1.5rem; }
+  .subtitle { font-size: 1.5rem; }
 }

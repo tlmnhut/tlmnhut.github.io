@@ -1,48 +1,43 @@
 // ---------------------------------------------------------------------------
 // Site furniture: masthead, profile, news, research themes, footer.
-// Lato is used for everything that is not prose.
+// Follows jekyll-theme-tufte: uppercase letterspaced serif nav, large
+// light-weight display type, italic serif subtitles.
 // ---------------------------------------------------------------------------
 
 // --- Masthead --------------------------------------------------------------
+// Nav only, as in the theme: the page's own h1 carries the title.
 
-.masthead {
-  font-family: $sans-font;
-  border-bottom: 1px solid var(--rule);
-  margin-bottom: 3rem;
-
-  .masthead-inner {
-    display: flex;
-    align-items: baseline;
-    gap: 1.2rem;
-    padding-top: 1.6rem;
-    padding-bottom: 1.2rem;
-  }
-}
-
-.masthead-title {
-  font-family: $sans-font;
-  font-size: 1.15rem;
-  font-weight: bold;
-  letter-spacing: 0.01em;
-  margin: 0;
-  line-height: 1;
-
-  a { text-decoration: none; }
-  a:hover { color: var(--accent); }
+.masthead-inner {
+  display: flex;
+  align-items: baseline;
+  padding-top: 1.5rem;
+  padding-bottom: 1rem;
 }
 
 .masthead-nav {
-  margin-left: auto;
   display: flex;
+  flex-wrap: wrap;
   align-items: baseline;
-  gap: 1.1rem;
-  font-size: 1rem;
+  column-gap: 2rem;
+  row-gap: 0.4rem;
 
   a {
-    text-decoration: none;
-    color: var(--muted);
+    font-family: $ui-font;
+    font-size: 1.3rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--text);
+    @include no-underline;
 
-    &:hover, &.active { color: var(--accent); }
+    &:hover, &:focus { color: var(--accent); }
+
+    // Active page gets angle brackets, as the theme does.
+    &.active {
+      font-weight: bold;
+
+      &::before { content: "\27e8"; }
+      &::after  { content: "\27e9"; }
+    }
   }
 }
 
@@ -53,17 +48,18 @@
   align-items: center;
   justify-content: center;
   align-self: center;
+  margin-left: auto;
   background: none;
   border: 0;
   border-radius: 4px;
-  padding: 0.3rem;
+  padding: 0.35rem;
   cursor: pointer;
   color: var(--muted);
   line-height: 0;
 
   &:hover { color: var(--accent); background: var(--toggle-hover); }
 
-  svg { width: 16px; height: 16px; }
+  svg { width: 17px; height: 17px; }
 
   .icon-moon { display: none; }
 }
@@ -99,14 +95,15 @@
 
 .profile {
   display: flex;
-  gap: 1.6rem;
-  align-items: flex-start;
-  margin-bottom: 2.4rem;
+  gap: 1.8rem;
+  align-items: center;
+  margin-top: 3rem;
+  margin-bottom: 1.4rem;
 }
 
 .profile-photo {
   flex: 0 0 auto;
-  width: 150px;
+  width: 148px;
 
   img { border-radius: 2px; }
 }
@@ -114,112 +111,113 @@
 .profile-body { flex: 1 1 auto; min-width: 0; }
 
 .profile-name {
-  font-size: 2.2rem;
-  margin: 0 0 0.4rem;
-  line-height: 1.05;
-}
-
-.profile-affiliation {
-  font-family: $sans-font;
-  font-size: 1.02rem;
-  line-height: 1.5;
-  color: var(--muted);
+  font-size: 3.2rem;
+  line-height: 1;
   margin: 0 0 0.9rem;
 }
 
+.profile-affiliation {
+  font-style: italic;
+  font-size: 1.55rem;
+  line-height: 1.2;
+  margin: 0 0 1.1rem;
+}
+
 .profile-links {
-  font-family: $sans-font;
-  font-size: 1rem;
-  line-height: 1.9;
+  font-family: $ui-font;
+  font-size: 1.15rem;
+  line-height: 1.85;
+  margin: 0 0 0.6rem;
 
-  a {
-    text-decoration: none;
-    color: var(--muted);
-    border-bottom: 1px solid var(--rule);
+  // Never break a service name across lines.
+  a { white-space: nowrap; }
 
-    &:hover { color: var(--accent); border-bottom-color: var(--accent); }
-  }
-
-  .sep { color: var(--rule); margin: 0 0.45rem; }
+  .sep { color: var(--muted); margin: 0 0.4rem; }
 }
 
-@media (max-width: 560px) {
-  .profile { display: block; }
-  .profile-photo { width: 120px; margin-bottom: 1.2rem; }
+@media (max-width: 620px) {
+  .profile { display: block; margin-top: 2rem; }
+  .profile-photo { width: 124px; margin-bottom: 1.4rem; }
+  .profile-name { font-size: 2.6rem; }
+  .profile-affiliation { font-size: 1.4rem; }
 }
 
-// --- Page meta (a subtitle line under an h1) --------------------------------
+// --- Page meta (a subtitle line under an h1) -------------------------------
 
 .page-meta {
-  font-family: $sans-font;
-  font-size: 1.02rem;
+  font-family: $ui-font;
+  font-size: 1.2rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
   color: var(--muted);
-  margin-top: -1rem;
-  margin-bottom: 1.6rem;
+  margin-top: -1.4rem;
+  margin-bottom: 2rem;
 }
 
 // --- Section headings ------------------------------------------------------
+// Same treatment as the nav, so the two rhyme.
 
 .section-title {
-  font-family: $sans-font;
+  font-family: $ui-font;
   font-style: normal;
-  font-size: 0.92rem;
-  font-weight: bold;
-  letter-spacing: 0.13em;
+  font-size: 1.3rem;
+  font-weight: 400;
+  letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: var(--muted);
-  margin-top: 3.4rem;
-  margin-bottom: 1.4rem;
-  padding-bottom: 0.5rem;
+  color: var(--text);
+  margin-top: 3.6rem;
+  margin-bottom: 1.6rem;
+  padding-bottom: 0.6rem;
   border-bottom: 1px solid var(--rule);
 }
 
 // --- News ------------------------------------------------------------------
 
-.news-item { margin-bottom: 1.5rem; }
+.news-item { margin-bottom: 1.6rem; }
 
 .news-date {
-  font-family: $sans-font;
-  font-size: 0.9rem;
-  letter-spacing: 0.04em;
+  font-family: $ui-font;
+  font-size: 1.1rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
   color: var(--muted);
   display: block;
-  margin-bottom: 0.15rem;
+  margin-bottom: 0.2rem;
 }
 
 .news-body {
-  font-size: 1.3rem;
-  line-height: 1.75;
+  font-size: 1.35rem;
+  line-height: 1.8;
 
   p { margin: 0; font-size: inherit; line-height: inherit; }
 }
 
 // --- Research themes -------------------------------------------------------
 
-.project { margin-bottom: 3rem; }
+.project { margin-bottom: 3.2rem; }
 
 .project-head {
   display: flex;
   align-items: baseline;
   gap: 1rem;
-  border-bottom: 1px solid var(--rule);
-  padding-bottom: 0.4rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0.8rem;
 }
 
 .project-title {
-  font-size: 1.55rem;
-  font-style: normal;
+  font-style: italic;
+  font-size: 1.7rem;
+  line-height: 1.15;
   margin: 0;
-  line-height: 1.2;
 
-  a { text-decoration: none; }
+  a { @include no-underline; }
   a:hover { color: var(--accent); }
 }
 
 .project-years {
-  font-family: $sans-font;
-  font-size: 0.92rem;
+  font-family: $ui-font;
+  font-size: 1.1rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
   color: var(--muted);
   margin-left: auto;
   white-space: nowrap;
@@ -231,10 +229,10 @@
 }
 
 .project-more {
-  font-family: $sans-font;
-  font-size: 0.95rem;
+  font-style: italic;
+  font-size: 1.2rem;
 
-  a { text-decoration: none; color: var(--muted); }
+  a { @include no-underline; color: var(--muted); }
   a:hover { color: var(--accent); }
 }
 
@@ -242,15 +240,15 @@
 
 .papers {
   list-style: none;
-  padding-left: 1.4rem;
+  padding-left: 1.5rem;
   margin: 0 0 1.2rem;
   border-left: 1px solid var(--rule);
 }
 
 .paper {
-  margin-bottom: 1.1rem;
-  font-size: 1.2rem;
-  line-height: 1.55;
+  margin-bottom: 1.2rem;
+  font-size: 1.25rem;
+  line-height: 1.6;
   padding-left: 0;
 }
 
@@ -258,56 +256,53 @@
 
 .paper-authors {
   display: block;
-  font-size: 1.08rem;
+  font-size: 1.15rem;
   color: var(--muted);
 
   strong { color: var(--text); font-weight: bold; }
 }
 
 .paper-venue {
-  font-family: $sans-font;
-  font-size: 0.92rem;
-  color: var(--muted);
   font-style: italic;
+  font-size: 1.15rem;
+  color: var(--muted);
 }
 
 .paper-links {
-  font-family: $sans-font;
-  font-size: 0.88rem;
-  margin-left: 0.4rem;
+  font-family: $ui-font;
+  font-size: 1.05rem;
+  margin-left: 0.5rem;
 
   a {
-    text-decoration: none;
+    @include no-underline;
     color: var(--muted);
-    border-bottom: 1px solid var(--rule);
-    margin-right: 0.35rem;
+    margin-right: 0.5rem;
 
-    &:hover { color: var(--accent); border-bottom-color: var(--accent); }
+    &::before { content: "["; }
+    &::after  { content: "]"; }
+    &:hover { color: var(--accent); }
   }
 }
 
 // --- Footer ----------------------------------------------------------------
 
 .page-footer {
-  font-family: $sans-font;
-  font-size: 0.9rem;
+  font-style: italic;
+  font-size: 1.15rem;
   color: var(--muted);
   border-top: 1px solid var(--rule);
-  margin-top: 4rem;
-  padding-top: 1.2rem;
+  margin-top: 4.5rem;
+  padding-top: 1.4rem;
   padding-bottom: 3rem;
-
-  a { text-decoration: none; }
-  a:hover { color: var(--accent); }
 }
 
 // --- Back link -------------------------------------------------------------
 
 .backlink {
-  font-family: $sans-font;
-  font-size: 0.95rem;
-  margin-top: 3rem;
+  font-style: italic;
+  font-size: 1.2rem;
+  margin-top: 3.4rem;
 
-  a { text-decoration: none; color: var(--muted); }
+  a { @include no-underline; color: var(--muted); }
   a:hover { color: var(--accent); }
 }
