@@ -10,14 +10,11 @@
 
 .content-grid > * { grid-column: 2; }          // prose column by default
 
-.content-grid > .profile,
 .content-grid > .section-title,
 .content-grid > .news-item,
 .content-grid > .project      { grid-column: 1 / -1; }   // own the full row
 .content-grid > .page-meta    { grid-column: 1; }        // hangs in the gutter
 
-.profile   > .profile-photo   { grid-column: 1; }
-.profile   > .profile-body    { grid-column: 2; }
 .news-item > .news-date       { grid-column: 1; }
 .news-item > .news-body       { grid-column: 2; }
 .project   > .project-years   { grid-column: 1; }
@@ -25,13 +22,10 @@
 
 @media (max-width: $two-col-min) {
   .content-grid > *,
-  .content-grid > .profile,
   .content-grid > .section-title,
   .content-grid > .news-item,
   .content-grid > .project,
   .content-grid > .page-meta,
-  .profile   > .profile-photo,
-  .profile   > .profile-body,
   .news-item > .news-date,
   .news-item > .news-body,
   .project   > .project-years,
@@ -127,22 +121,29 @@
 
 // --- Profile (home page only) ----------------------------------------------
 
+// Photo sits at the right-hand end of the prose column; every piece of text
+// (name, affiliation, links, bio) starts at the same left edge.
 .profile {
-  @include two-col;
-  align-items: start;
+  display: flex;
+  gap: 1.8rem;
+  align-items: flex-start;
   margin-top: 3rem;
   margin-bottom: 1.4rem;
 }
 
-// The photo fills the gutter, so it lines up with the labels below it.
 .profile-photo {
-  width: 100%;
-  max-width: 160px;
+  order: 2;                 // after the text, i.e. on the right
+  flex: 0 0 auto;
+  width: 160px;
 
   img { border-radius: 2px; }
 }
 
-.profile-body { min-width: 0; }
+.profile-body {
+  order: 1;
+  flex: 1 1 auto;
+  min-width: 0;
+}
 
 .profile-name {
   font-size: 3.2rem;
@@ -340,21 +341,14 @@
 @media (max-width: $two-col-min) {
   .news-item, .project { @include one-col; }
 
-  .profile {
-    @include one-col;
-    display: flex;
-    gap: 1.8rem;
-    align-items: center;
-  }
-
-  .profile-photo { flex: 0 0 auto; width: 148px; }
-  .profile-body  { flex: 1 1 auto; }
+  .profile-photo { width: 132px; }
 
   .project-years { padding-top: 0; }
   .page-meta { padding-top: 0; margin-top: -1.4rem; margin-bottom: 2rem; }
 }
 
-@media (max-width: 620px) {
+@media (max-width: 520px) {
+  // Too narrow for a side-by-side row: stack, photo first.
   .profile { display: block; margin-top: 2rem; }
   .profile-photo { width: 124px; margin-bottom: 1.4rem; }
   .profile-name { font-size: 2.6rem; }
