@@ -4,39 +4,6 @@
 // light-weight display type, italic serif subtitles.
 // ---------------------------------------------------------------------------
 
-// --- Grid placement --------------------------------------------------------
-// Every child is placed explicitly. Two-class selectors here outrank the
-// container's `> *` default, so a row can reliably span both columns.
-
-.content-grid > * { grid-column: 2; }          // prose column by default
-
-.content-grid > .section-title,
-.content-grid > .news-item    { grid-column: 1 / -1; }   // own the full row
-
-// The home-page intro starts at the gutter edge, level with the nav and the
-// section labels, rather than indented to the prose column. Capped at the
-// measure so the line stays readable even though the row is wider.
-.content-grid > .profile,
-.content-grid > .intro,
-.content-grid > .project      { grid-column: 1 / -1; }
-
-.content-grid > .intro,
-.content-grid > .project      { max-width: $measure; }
-
-.news-item > .news-date       { grid-column: 1; }
-.news-item > .news-body       { grid-column: 2; }
-
-@media (max-width: $two-col-min) {
-  .content-grid > *,
-  .content-grid > .section-title,
-  .content-grid > .news-item,
-  .content-grid > .project,
-  .content-grid > .profile,
-  .content-grid > .intro,
-  .news-item > .news-date,
-  .news-item > .news-body { grid-column: auto; }
-}
-
 // --- Masthead --------------------------------------------------------------
 // Nav only, as in the theme: the page's own h1 carries the title.
 
@@ -199,24 +166,27 @@
 
 // --- News ------------------------------------------------------------------
 
+// Date sits above its entry as a small label, the same shape as the section
+// headings, so a news item reads as one block rather than a table row.
 .news-item {
-  @include two-col;
-  margin-bottom: 1.6rem;
+  margin-bottom: 2rem;
+
+  &:last-child { margin-bottom: 0; }
 }
 
 .news-date {
+  display: block;
   font-family: $ui-font;
-  font-size: 1.1rem;
-  letter-spacing: 0.09em;
+  font-size: 1.05rem;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--muted);
-  display: block;
-  margin-bottom: 0.2rem;
+  margin-bottom: 0.35rem;
 }
 
 .news-body {
   font-size: 1.35rem;
-  line-height: 1.8;
+  line-height: 1.75;
 
   p { margin: 0; font-size: inherit; line-height: inherit; }
 }
@@ -246,17 +216,7 @@
   padding-bottom: 3rem;
 }
 
-// --- Collapsing the gutter -------------------------------------------------
-// Below $two-col-min there is no room for a left rail, so every grid row
-// becomes ordinary block flow and labels sit above the thing they label.
-
-@media (max-width: $two-col-min) {
-  .news-item { @include one-col; }
-
-  .profile-photo { width: 132px; }
-}
-
-@media (max-width: 520px) {
+@media (max-width: $narrow) {
   // Too narrow for a side-by-side row. Stack, and use flex order to keep the
   // photo on top even though it comes after the text in the markup.
   .profile { display: flex; flex-direction: column; margin-top: 2rem; }

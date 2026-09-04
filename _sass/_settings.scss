@@ -76,32 +76,16 @@ $code-font: Consolas, "Liberation Mono", Menlo, "DejaVu Sans Mono", monospace;
 $ui-font: $body-font;
 
 // --- Layout ----------------------------------------------------------------
-// Root is 15px and body copy is 1.4rem (21px), so 40rem ≈ 64 characters. Prose
-// stays at that measure at every screen size; wide screens buy a left gutter
-// that carries section labels, dates and years rather than a longer line.
-$measure:    42rem;   // prose column, ~67 characters
-$gutter-col: 12rem;   // left rail for labels/dates/years
-$col-gap:    2.5rem;
-$page-pad:   1.5rem;
-// box-sizing is border-box, so the container's own padding has to be included
-// here or it eats into the prose column.
-$page-max:   59.5rem; // = gutter + gap + measure + 2 * padding
+// Root is 15px and body copy is 1.4rem (21px), so 42rem ≈ 67 characters.
+// One column: every block is flush left at the same edge. The root font-size
+// steps up on large monitors (see _tufte.scss), so the column grows with the
+// screen while the character count stays put.
+$measure:   42rem;
+$page-pad:  1.5rem;
+$page-max:  45rem;   // = measure + 2 * padding
 
-// Below this the two columns collapse into one.
-$two-col-min: 900px;
-
-// Children are placed explicitly by the rules in _site.scss rather than by a
-// `> *` default here: `main.wrap > *` carries an element selector, so it
-// outranks any single-class rule trying to span a row across both columns.
-@mixin two-col {
-  display: grid;
-  grid-template-columns: $gutter-col minmax(0, $measure);
-  column-gap: $col-gap;
-}
-
-@mixin one-col {
-  display: block;
-}
+// Below this the profile row stops sitting side by side.
+$narrow:    520px;
 
 // --- Palette ---------------------------------------------------------------
 // Tufte's cream #fffff8 on light and the theme's neutral #151515 / #ddd on dark.
