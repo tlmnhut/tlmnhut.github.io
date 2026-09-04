@@ -3,7 +3,9 @@ layout: default
 ---
 {% include profile.html %}
 
+<div class="intro">
 {{ content }}
+</div>
 
 {%- assign news = site.data.news | sort: 'date' | reverse %}
 {%- if news.size > 0 %}

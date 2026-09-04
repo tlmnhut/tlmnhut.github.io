@@ -15,6 +15,16 @@
 .content-grid > .project      { grid-column: 1 / -1; }   // own the full row
 .content-grid > .page-meta    { grid-column: 1; }        // hangs in the gutter
 
+// The home-page intro starts at the gutter edge, level with the nav and the
+// section labels, rather than indented to the prose column. Capped at the
+// measure so the line stays readable even though the row is wider.
+.content-grid > .profile,
+.content-grid > .profile-links,
+.content-grid > .intro        { grid-column: 1 / -1; }
+
+.content-grid > .profile-links,
+.content-grid > .intro        { max-width: $measure; }
+
 .news-item > .news-date       { grid-column: 1; }
 .news-item > .news-body       { grid-column: 2; }
 .project   > .project-years   { grid-column: 1; }
@@ -26,6 +36,9 @@
   .content-grid > .news-item,
   .content-grid > .project,
   .content-grid > .page-meta,
+  .content-grid > .profile,
+  .content-grid > .profile-links,
+  .content-grid > .intro,
   .news-item > .news-date,
   .news-item > .news-body,
   .project   > .project-years,
