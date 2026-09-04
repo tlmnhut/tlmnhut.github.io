@@ -34,6 +34,15 @@ body {
   padding-right: $page-pad;
 }
 
+// Images left, text right. One column below $two-col-min, where each image
+// stacks above the text it belongs to.
+.content-grid { @include two-col; }
+
+@media (max-width: $two-col-min) {
+  .wrap { max-width: $measure; }
+  .content-grid { @include one-col; }
+}
+
 // Everything is sized in rem, so nudging the root on big monitors grows the
 // whole page proportionally: the line gets physically longer but keeps the
 // same character count, which is the readable way to use the extra width.

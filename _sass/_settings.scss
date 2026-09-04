@@ -76,16 +76,31 @@ $code-font: Consolas, "Liberation Mono", Menlo, "DejaVu Sans Mono", monospace;
 $ui-font: $body-font;
 
 // --- Layout ----------------------------------------------------------------
+// Two columns above $two-col-min: images on the left, all text on the right.
 // Root is 15px and body copy is 1.4rem (21px), so 42rem ≈ 67 characters.
-// One column: every block is flush left at the same edge. The root font-size
-// steps up on large monitors (see _tufte.scss), so the column grows with the
-// screen while the character count stays put.
-$measure:   42rem;
+$measure:   42rem;   // text column
+$img-col:   13rem;   // image rail
+$col-gap:   2rem;
 $page-pad:  1.5rem;
-$page-max:  45rem;   // = measure + 2 * padding
+$page-max:  60rem;   // = img-col + gap + measure + 2 * padding
 
-// Below this the profile row stops sitting side by side.
-$narrow:    520px;
+// Below this the two columns stack: image above its text.
+$two-col-min: 860px;
+// Below this the profile photo shrinks further.
+$narrow:      520px;
+
+// Children are placed explicitly by the rules in _site.scss rather than by a
+// `> *` default here: a selector carrying an element name outranks any
+// single-class rule trying to span a row across both columns.
+@mixin two-col {
+  display: grid;
+  grid-template-columns: $img-col minmax(0, $measure);
+  column-gap: $col-gap;
+}
+
+@mixin one-col {
+  display: block;
+}
 
 // --- Palette ---------------------------------------------------------------
 // Tufte's cream #fffff8 on light and the theme's neutral #151515 / #ddd on dark.

@@ -1,17 +1,18 @@
 {%- comment -%}
-  Links live inside .profile-body so the body can stretch to the photo's height
-  and push them down to sit level with the bottom of the photo.
+  Photo first, so the DOM order matches the visual order in both the two-column
+  grid and the stacked layout. Links live inside .profile-body so the body can
+  stretch to the photo's height and push them level with its bottom edge.
 {%- endcomment -%}
 <div class="profile">
+  <div class="profile-photo">
+    <img src="{{ site.author.avatar | prepend: '/images/' | relative_url }}"
+         alt="{{ site.author.name }}" width="1059" height="1060" fetchpriority="high">
+  </div>
   <div class="profile-body">
     <h1 class="profile-name">{{ site.author.name }}</h1>
     <p class="profile-affiliation">{{ site.author.bio }}</p>
     <p class="profile-links">
       {% for item in site.data.navigation.academic %}{% unless forloop.first %} <span class="sep">&middot;</span> {% endunless %}<a href="{{ item.url }}"{% unless item.url contains 'mailto:' %} target="_blank" rel="noopener"{% endunless %}>{{ item.title }}</a>{% endfor %}
     </p>
-  </div>
-  <div class="profile-photo">
-    <img src="{{ site.author.avatar | prepend: '/images/' | relative_url }}"
-         alt="{{ site.author.name }}" width="1059" height="1060" fetchpriority="high">
   </div>
 </div>

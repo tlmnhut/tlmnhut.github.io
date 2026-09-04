@@ -4,6 +4,33 @@
 // light-weight display type, italic serif subtitles.
 // ---------------------------------------------------------------------------
 
+// --- Grid placement --------------------------------------------------------
+// Left column is images only; every piece of text sits in the right column, so
+// all copy shares one left edge. Each child is placed by an explicit two-class
+// rule, which outranks the container's `> *` default.
+
+.content-grid > * { grid-column: 2; }            // text column by default
+
+.content-grid > .section-title,
+.content-grid > .profile,
+.content-grid > .project      { grid-column: 1 / -1; }   // own the full row
+
+.profile > .profile-photo     { grid-column: 1; }
+.profile > .profile-body      { grid-column: 2; }
+.project > .project-image     { grid-column: 1; }
+.project > .project-body      { grid-column: 2; }
+
+@media (max-width: $two-col-min) {
+  .content-grid > *,
+  .content-grid > .section-title,
+  .content-grid > .profile,
+  .content-grid > .project,
+  .profile > .profile-photo,
+  .profile > .profile-body,
+  .project > .project-image,
+  .project > .project-body { grid-column: auto; }
+}
+
 // --- Masthead --------------------------------------------------------------
 // Nav only, as in the theme: the page's own h1 carries the title.
 
@@ -96,25 +123,21 @@
 // Photo sits at the right-hand end of the prose column; every piece of text
 // (name, affiliation, links, bio) starts at the same left edge.
 .profile {
-  display: flex;
-  gap: 1.8rem;
-  align-items: stretch;     // body grows to the photo's height
+  @include two-col;
   margin-top: 3rem;
   margin-bottom: 1.4rem;
 }
 
 .profile-photo {
-  order: 2;                 // after the text, i.e. on the right
-  flex: 0 0 auto;
-  align-self: flex-start;   // photo keeps its own height
-  width: 160px;
+  align-self: start;        // photo keeps its own height
+  width: 100%;
 
   img { border-radius: 2px; }
 }
 
+// Flex column so the links can be pushed to the foot of the row, level with
+// the bottom of the photo.
 .profile-body {
-  order: 1;
-  flex: 1 1 auto;
   min-width: 0;
   display: flex;
   flex-direction: column;
@@ -193,7 +216,19 @@
 
 // --- Research themes -------------------------------------------------------
 
-.project { margin-bottom: 2.8rem; }
+.project {
+  @include two-col;
+  margin-bottom: 2.8rem;
+}
+
+.project-image {
+  align-self: start;
+  width: 100%;
+
+  img { border-radius: 2px; display: block; }
+}
+
+.project-body { min-width: 0; }
 
 .project-title {
   font-style: italic;
@@ -216,13 +251,19 @@
   padding-bottom: 3rem;
 }
 
-@media (max-width: $narrow) {
-  // Too narrow for a side-by-side row. Stack, and use flex order to keep the
-  // photo on top even though it comes after the text in the markup.
-  .profile { display: flex; flex-direction: column; margin-top: 2rem; }
-  .profile-photo { order: 1; width: 124px; margin-bottom: 1.4rem; }
-  .profile-body  { order: 2; display: block; }
+// Stacked: each image sits above the text it belongs to, at a size that does
+// not dominate a small screen.
+@media (max-width: $two-col-min) {
+  .profile, .project { @include one-col; }
+  .profile-photo { width: 150px; margin-bottom: 1.4rem; }
+  .profile-body  { display: block; }
   .profile-links { margin-top: 1rem; }
+  .project-image { width: 100%; max-width: 320px; margin-bottom: 1rem; }
+}
+
+@media (max-width: $narrow) {
+  .profile { margin-top: 2rem; }
+  .profile-photo { width: 124px; }
   .profile-name { font-size: 2.6rem; }
   .profile-affiliation { font-size: 1.4rem; }
 }

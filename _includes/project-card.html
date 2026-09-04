@@ -1,11 +1,21 @@
 {%- comment -%}
-  One research theme: a title and a block of text. Expects include.project.
-  No year, no image, no papers, and no page to link through to.
+  One research theme: an image on the left, title and text on the right.
+  Expects include.project. Title and summary are wrapped in .project-body so
+  they are one grid item and flow together, instead of landing in separate
+  grid rows with the image's height between them.
 {%- endcomment -%}
 {%- assign p = include.project -%}
 <article class="project">
-  <h3 class="project-title">{{ p.title }}</h3>
-  {%- if p.summary %}
-  <p class="project-summary">{{ p.summary | markdownify | remove: '<p>' | remove: '</p>' | strip }}</p>
+  {%- if p.image %}
+  <div class="project-image">
+    <img src="{{ p.image | prepend: '/images/' | relative_url }}"
+         alt="{{ p.image_alt | default: p.title }}" loading="lazy">
+  </div>
   {%- endif %}
+  <div class="project-body">
+    <h3 class="project-title">{{ p.title }}</h3>
+    {%- if p.summary %}
+    <p class="project-summary">{{ p.summary | markdownify | remove: '<p>' | remove: '</p>' | strip }}</p>
+    {%- endif %}
+  </div>
 </article>
