@@ -120,7 +120,7 @@ sup, sub { line-height: 0; font-size: 0.75em; }
   background:
     linear-gradient(var(--bg), var(--bg)),
     linear-gradient(var(--bg), var(--bg)),
-    linear-gradient(currentColor, currentColor);
+    linear-gradient(var(--accent-soft), var(--accent-soft));
   background-size: 0.05em 1px, 0.05em 1px, 1px 1px;
   background-repeat: no-repeat, no-repeat, repeat-x;
   background-position: 0% 93%, 100% 93%, 0% 93%;
@@ -142,10 +142,19 @@ sup, sub { line-height: 0; font-size: 0.75em; }
 a {
   color: inherit;
   @include tufte-underline;
-  transition: color 0.12s ease;
+  transition: color 0.12s ease, background-image 0.12s ease;
 
-  &:hover, &:focus { color: var(--accent); }
+  // Underline goes full accent on hover, along with the text.
+  &:hover, &:focus {
+    color: var(--accent);
+    background-image:
+      linear-gradient(var(--bg), var(--bg)),
+      linear-gradient(var(--bg), var(--bg)),
+      linear-gradient(var(--accent), var(--accent));
+  }
 }
+
+::selection { background: var(--selection); }
 
 // Opt out for nav, buttons and other chrome.
 .plain-link { @include no-underline; }
@@ -195,13 +204,13 @@ code, pre, kbd, samp {
 }
 
 code {
-  background: var(--code-bg);
+  background: var(--bg-tint);
   padding: 0.1em 0.3em;
   border-radius: 2px;
 }
 
 pre {
-  background: var(--code-bg);
+  background: var(--bg-tint);
   padding: 1rem 1.2rem;
   overflow-x: auto;
   line-height: 1.5;

@@ -103,30 +103,38 @@ $narrow:      520px;
 }
 
 // --- Palette ---------------------------------------------------------------
-// Tufte's cream #fffff8 on light and the theme's neutral #151515 / #ddd on dark.
-// Links rest in the text colour (as tufte-css does) and take the accent on hover.
+// Rubrication: body in ink, structural marks in red. Section headings, news
+// dates, the active nav item and link underlines carry the accent; everything
+// else stays ink, so the colour marks structure instead of decorating.
+//
+// Grounds are warm rather than neutral. Light is laid paper, a touch warmer
+// than tufte-css's #fffff8; dark is a warm near-black, not grey, so ET Book's
+// warm greys sit on it without going cold.
 
 @mixin palette-light {
-  --bg:          #fffff8;
-  --text:        #111111;
-  --muted:       #6b6b63;
-  --rule:        #cccccc;
-  --accent:      #7d2f2f;
-  --code-bg:     #f4f2e4;
-  --toggle-hover:#eeece0;
+  --bg:            #fdfaf1;   // laid paper
+  --bg-tint:       #f4eddd;   // code, toggle hover, image mats
+  --text:          #26221c;   // warm ink, softer than pure black
+  --muted:         #7b7264;
+  --rule:          #ded4c0;
+  --rule-strong:   #ab9c7a;
+  --accent:        #9c2b21;   // madder red
+  --accent-soft:   #b57b70;   // link underlines at rest, 3.3:1 on paper
+  --selection:     #f0d9c6;
 }
 
 @mixin palette-dark {
-  --bg:          #151515;
-  --text:        #dddddd;
-  --muted:       #9a9a94;
-  --rule:        #3a3a3a;
-  --accent:      #d8b47a;
-  --code-bg:     #1e1e1e;
-  --toggle-hover:#242424;
+  --bg:            #191612;   // warm near-black
+  --bg-tint:       #231e17;
+  --text:          #eae3d5;
+  --muted:         #a3988a;
+  --rule:          #3a332a;
+  --rule-strong:   #736552;
+  --accent:        #e59070;   // terracotta: the rubric, warmed for a dark ground
+  --accent-soft:   #8f5f4a;
+  --selection:     #4a3a2c;
 }
 
-// Three states: no attribute follows the OS; an explicit choice wins either way.
 :root { @include palette-light; color-scheme: light; }
 
 @media (prefers-color-scheme: dark) {
