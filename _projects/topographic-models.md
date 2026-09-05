@@ -3,8 +3,8 @@ title: "Topographic models"
 years: "2024 – present"
 order: 1
 summary: >-
-  Models that simulate the spatial and functional organization of the brain, aiming to create
-  more biologically plausible neural networks for cognitive research.
+  Deep neural networks that simulate the spatial and functional organization of the brain, built to be
+  more biologically plausible models of cognition.
 papers:
   - authors: "Cortinovis, D., **Truong, N.**, Op de Beeck, H., & Bracci, S."
     title: "Investigating action topography in visual cortex and deep artificial neural networks"

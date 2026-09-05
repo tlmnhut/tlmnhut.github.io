@@ -9,7 +9,7 @@ layout: default
 
 {%- assign news = site.data.news | sort: 'date' | reverse %}
 {%- if news.size > 0 %}
-<h2 class="section-title" id="news">News</h2>
+{% include section-title.html label="News" id="news" %}
 {%- for item in news %}
 <div class="news-item">
   <span class="news-date">{{ item.date | date: "%-d %b %Y" }}</span>
@@ -20,7 +20,8 @@ layout: default
 
 {%- assign projects = site.projects | sort: 'order' %}
 {%- if projects.size > 0 %}
-<h2 class="section-title" id="research">Research</h2>
+{%- assign scholar = site.data.navigation.academic | where: "title", "Google Scholar" | first %}
+{% include section-title.html label="Research" id="research" link_title="Google Scholar" link_url=scholar.url %}
 {%- for project in projects %}
 {% include project-card.html project=project %}
 {%- endfor %}

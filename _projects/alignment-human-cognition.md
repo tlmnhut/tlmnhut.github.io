@@ -3,8 +3,8 @@ title: "Alignment of AI models with human cognition"
 years: "2023 – present"
 order: 2
 summary: >-
-  Using pruning techniques and explainable AI to study how deep neural networks represent
-  information, and how their representations align with human behavior and brain data.
+  Using pruning techniques and explainable AI to study how deep neural network representations align
+  with human similarity judgments, and to identify the visual features humans rely on to compare objects.
 papers:
   - authors: "Bavaresco, A., **Truong, N.**, & Hasson, U."
     title: "Modeling human concepts with subspaces in deep vision models"

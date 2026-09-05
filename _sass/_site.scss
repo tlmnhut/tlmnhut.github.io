@@ -186,6 +186,10 @@
 // Same treatment as the nav, so the two rhyme.
 
 .section-title {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
   font-family: $ui-font;
   font-style: normal;
   font-size: 1.3rem;
@@ -210,6 +214,26 @@
     height: 2px;
     background: var(--accent);
   }
+}
+
+// The optional "(Google Scholar)" link riding the same baseline, right-aligned.
+// Deliberately unlike the label: normal case, no tracking, no rubric colour --
+// it names a source, it isn't itself a structural mark.
+.section-title-aux {
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.05rem;
+  letter-spacing: normal;
+  text-transform: none;
+  color: var(--muted);
+  white-space: nowrap;
+
+  a {
+    color: inherit;
+    @include no-underline;
+  }
+
+  a:hover, a:focus { color: var(--accent); }
 }
 
 // --- News ------------------------------------------------------------------

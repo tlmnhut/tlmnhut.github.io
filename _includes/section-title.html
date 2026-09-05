@@ -1,0 +1,11 @@
+{%- comment -%}
+  A section heading, with an optional right-aligned link to a source for
+  everything below it (e.g. Research -> Google Scholar). Expects include.label
+  and include.id; include.link_title / include.link_url are optional.
+{%- endcomment -%}
+<h2 class="section-title" id="{{ include.id }}">
+  <span>{{ include.label }}</span>
+  {%- if include.link_url %}
+  <span class="section-title-aux">(<a href="{{ include.link_url }}" target="_blank" rel="noopener">{{ include.link_title }}</a>)</span>
+  {%- endif %}
+</h2>
