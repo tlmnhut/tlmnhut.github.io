@@ -1,10 +1,10 @@
 ---
 title: "Alignment of AI models with human cognition"
-years: "2023 – present"
+years: ""
 order: 2
 summary: >-
-  Using pruning techniques and explainable AI to study how deep neural network representations align
-  with human similarity judgments, and to identify the visual features humans rely on to compare objects.
+  Using pruning and explainable AI to identify the visual features that align deep neural network
+  representations with human similarity judgments.
 papers:
   - authors: "**Truong, N.**, Pesenti, D., & Hasson, U."
     title: "Explaining human comparisons using alignment-importance heatmaps"
