@@ -1,17 +1,19 @@
 {%- comment -%}
-  A compact "see also" line: author(s), abbreviated venue, year -- each entry
-  linking to its paper. Expects include.papers, an array of hashes each with
-  `cite` (the display text) and `links` (doi / arxiv / pdf / html), in that
-  priority order for which URL a citation points to.
+  A compact "see also" line: venue and year per paper, each linking to its
+  paper -- no author names or titles, just enough to place the work. Expects
+  include.papers, already filtered down to the ones worth surfacing here (see
+  project-card.html, which passes only papers marked `featured: true`).
+  Link priority: doi, then arxiv, then pdf, then html.
 {%- endcomment -%}
 <p class="project-cites">
   {%- for paper in include.papers -%}
-    {%- unless forloop.first %} &middot; {% endunless -%}
+    {%- unless forloop.first %}, {% endunless -%}
     {%- assign url = paper.links.doi | default: paper.links.arxiv | default: paper.links.pdf | default: paper.links.html -%}
+    {%- capture label %}{{ paper.venue }} {{ paper.year }}{% endcapture -%}
     {%- if url -%}
-      <a href="{{ url }}" target="_blank" rel="noopener">{{ paper.cite }}</a>
+      <a href="{{ url }}" target="_blank" rel="noopener">{{ label | strip }}</a>
     {%- else -%}
-      {{ paper.cite }}
+      {{ label | strip }}
     {%- endif -%}
   {%- endfor -%}
 </p>

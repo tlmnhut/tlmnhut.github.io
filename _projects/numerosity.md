@@ -4,9 +4,25 @@ years: "2026 – present"
 order: 3
 # PLACEHOLDER TEXT - rewrite before publishing.
 summary: >-
-  Whether deep networks trained without any counting objective develop an
-  approximate sense of number, and how closely that sense tracks the behavioural
-  and neural signatures of numerosity in humans.
+  How deep neural networks encode number sense.
+papers:
+  # Title and authors unverified: OpenReview blocks automated fetches (403,
+  # bot-challenge), so this could only be checked against the URL Nhut gave.
+  # Confirm both before this goes further than a venue/year tag.
+  - authors: ~
+    title: ~
+    venue: "Cognitive Computational Neuroscience (CCN)"
+    year: 2025
+    featured: true
+    links:
+      pdf: "https://openreview.net/pdf?id=AJmt5Cb1Nr"
+  - authors: "**Truong, N.**, Noei, S., & Karami, A."
+    title: "Reassessing number-detector units in convolutional neural networks"
+    venue: "NeurIPS Workshop"
+    year: 2024
+    featured: true
+    links:
+      pdf: "https://www.biorxiv.org/content/biorxiv/early/2026/03/10/2026.03.07.710304.full.pdf"
 ---
 
 PLACEHOLDER TEXT — rewrite before publishing.

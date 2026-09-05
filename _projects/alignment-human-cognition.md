@@ -6,30 +6,42 @@ summary: >-
   Using pruning techniques and explainable AI to study how deep neural network representations align
   with human similarity judgments, and to identify the visual features humans rely on to compare objects.
 papers:
+  - authors: "**Truong, N.**, Pesenti, D., & Hasson, U."
+    title: "Explaining human comparisons using alignment-importance heatmaps"
+    venue: "Computational Brain & Behavior"
+    year: 2025
+    featured: true
+    links:
+      doi: "https://doi.org/10.1007/s42113-025-00235-x"
+  - authors: "Tarigopula, P., Fairhall, S., Bavaresco, A., **Truong, N.**, & Hasson, U."
+    title: "Improved prediction of behavioral and neural similarity spaces using pruned DNNs"
+    # Crossref records this as published in print November 2023 (vol. 168, pp. 89-104),
+    # not 2024 as originally given -- flagged to Nhut, using the verified date here.
+    venue: "Neural Networks"
+    year: 2023
+    featured: true
+    links:
+      doi: "https://doi.org/10.1016/j.neunet.2023.08.049"
   - authors: "Bavaresco, A., **Truong, N.**, & Hasson, U."
     title: "Modeling human concepts with subspaces in deep vision models"
-    cite: "Bavaresco et al., ACM TIIS 2025"
     venue: "ACM Transactions on Interactive Intelligent Systems (TIIS)"
     year: 2025
     links:
       doi: "https://doi.org/10.1145/3768340"
   - authors: "**Truong, N.**, & Hasson, U."
     title: "Pruning sparse features for cognitive modeling"
-    cite: "Truong & Hasson, CCN 2024"
     venue: "Conference on Cognitive Computational Neuroscience (CCN)"
     year: 2024
     links:
       pdf: "https://2024.ccneuro.org/pdf/82_Paper_authored_CCN_2024.pdf"
   - authors: "**Truong, N.**, Bavaresco, A., & Hasson, U."
     title: "The impact of rarely-firing nodes in neural networks on representational geometry and predictions of human similarity judgments"
-    cite: "Truong et al., CCN 2023"
     venue: "Conference on Cognitive Computational Neuroscience (CCN)"
     year: 2023
     links:
       pdf: "https://iris.unitn.it/bitstream/11572/389329/1/0001025.pdf"
   - authors: "**Truong, N.**, Bavaresco, A., & Hasson, U."
     title: "Unsupervised feature selection methods for modeling human similarity judgments with deep neural networks"
-    cite: "Truong et al., J. Vision 2023"
     venue: "Journal of Vision, 23(9)"
     year: 2023
     links:
