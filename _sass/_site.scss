@@ -22,6 +22,7 @@
 .news-item > .news-body       { grid-column: 2; }
 .project   > .project-title   { grid-column: 1; }
 .project   > .project-summary { grid-column: 2; }
+.project   > .project-cites   { grid-column: 2; }
 
 @media (max-width: $two-col-min) {
   .content-grid > *,
@@ -34,7 +35,8 @@
   .news-item > .news-date,
   .news-item > .news-body,
   .project   > .project-title,
-  .project   > .project-summary { grid-column: auto; }
+  .project   > .project-summary,
+  .project   > .project-cites { grid-column: auto; }
 }
 
 // --- Masthead --------------------------------------------------------------
@@ -281,6 +283,20 @@
 }
 
 .project-summary { margin: 0; }
+
+// The compact "see also" line: a citation per paper, de-emphasised the same
+// way as the Google Scholar link on the section heading -- it names sources,
+// it doesn't carry structure, so it stays out of the rubric.
+.project-cites {
+  margin: 0.7rem 0 0;
+  font-style: italic;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: var(--muted);
+
+  a { color: inherit; @include no-underline; }
+  a:hover, a:focus { color: var(--accent); }
+}
 
 // --- Footer ----------------------------------------------------------------
 

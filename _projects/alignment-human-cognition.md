@@ -8,24 +8,28 @@ summary: >-
 papers:
   - authors: "Bavaresco, A., **Truong, N.**, & Hasson, U."
     title: "Modeling human concepts with subspaces in deep vision models"
+    cite: "Bavaresco et al., ACM TIIS 2025"
     venue: "ACM Transactions on Interactive Intelligent Systems (TIIS)"
     year: 2025
     links:
       doi: "https://doi.org/10.1145/3768340"
   - authors: "**Truong, N.**, & Hasson, U."
     title: "Pruning sparse features for cognitive modeling"
+    cite: "Truong & Hasson, CCN 2024"
     venue: "Conference on Cognitive Computational Neuroscience (CCN)"
     year: 2024
     links:
       pdf: "https://2024.ccneuro.org/pdf/82_Paper_authored_CCN_2024.pdf"
   - authors: "**Truong, N.**, Bavaresco, A., & Hasson, U."
     title: "The impact of rarely-firing nodes in neural networks on representational geometry and predictions of human similarity judgments"
+    cite: "Truong et al., CCN 2023"
     venue: "Conference on Cognitive Computational Neuroscience (CCN)"
     year: 2023
     links:
       pdf: "https://iris.unitn.it/bitstream/11572/389329/1/0001025.pdf"
   - authors: "**Truong, N.**, Bavaresco, A., & Hasson, U."
     title: "Unsupervised feature selection methods for modeling human similarity judgments with deep neural networks"
+    cite: "Truong et al., J. Vision 2023"
     venue: "Journal of Vision, 23(9)"
     year: 2023
     links:

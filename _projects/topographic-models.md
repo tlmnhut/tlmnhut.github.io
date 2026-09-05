@@ -8,12 +8,14 @@ summary: >-
 papers:
   - authors: "Cortinovis, D., **Truong, N.**, Op de Beeck, H., & Bracci, S."
     title: "Investigating action topography in visual cortex and deep artificial neural networks"
+    cite: "Cortinovis et al., Nat. Commun. 2025"
     venue: "Nature Communications"
     year: 2025
     links:
       doi: "https://www.nature.com/articles/s41467-025-67855-6"
   - authors: "**Truong, N.**, & Hasson, U."
     title: "Beyond topography: Topographic regularization improves robustness and reshapes representations in convolutional neural networks"
+    cite: "Truong & Hasson, Neurocomputing 2026"
     venue: "Neurocomputing"
     year: 2026
     links:
@@ -21,6 +23,7 @@ papers:
       arxiv: "https://arxiv.org/abs/2508.00043"
   - authors: "**Truong, N.**, & Hasson, U."
     title: "Weight-similarity topographic networks improve retinotopy and noise robustness"
+    cite: "Truong & Hasson, J. Vision 2025"
     venue: "Journal of Vision (VSS abstract)"
     year: 2025
     links:
