@@ -19,7 +19,7 @@
     <p class="profile-affiliation">
       {%- comment -%} bio is a list of lines; a plain string still works. {%- endcomment -%}
       {%- if site.author.bio.first -%}
-        {%- for line in site.author.bio %}{{ line }}{% unless forloop.last %}<br>{% endunless %}{% endfor -%}
+        {%- for line in site.author.bio %}<span class="aff-line">{{ line }}</span>{% unless forloop.last %}<br>{% endunless %}{% endfor -%}
       {%- else -%}
         {{ site.author.bio }}
       {%- endif -%}

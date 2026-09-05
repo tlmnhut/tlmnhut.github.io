@@ -25,6 +25,20 @@ body {
   font-kerning: normal;
 }
 
+// Paper fibre, laid over the whole page -- ink included, since grain sits on
+// top of print rather than behind it. Fixed, so it reads as the sheet the page
+// is printed on and not as something that scrolls with the text.
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  background-image: $grain-svg;
+  opacity: var(--grain);
+  filter: var(--grain-filter);
+}
+
 // Page container. Holds the masthead row and the content grid.
 .wrap {
   max-width: $page-max;

@@ -74,20 +74,27 @@ $narrow:      520px;
 // than tufte-css's #fffff8; dark is a warm near-black, not grey, so ET Book's
 // warm greys sit on it without going cold.
 
+// Monochrome fractal noise, tiled. Carries the whole ground: at 4-6% it is not
+// a visible texture so much as the difference between "a colour" and "a sheet".
+$grain-svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23g)'/%3E%3C/svg%3E");
+
 @mixin palette-light {
-  --bg:            #fdfaf1;   // laid paper
+  --bg:            #fdf9ea;   // laid paper
   --bg-tint:       #f4eddd;   // code, toggle hover
   --text:          #26221c;   // warm ink, softer than pure black
-  --muted:         #7b7264;
+  --muted:         #746b5c;
   --rule:          #ded4c0;
   --rule-strong:   #ab9c7a;
   --accent:        #9c2b21;   // madder red
   --accent-soft:   #b57b70;   // link underlines at rest, 3.3:1 on paper
   --selection:     #f0d9c6;
+  --grain:         0.11;     // paper fibre; see body::after in _tufte.scss
+  --grain-filter:  none;      // dark specks on a light ground
+  --plate:         rgba(38, 28, 16, 0.13);   // the shadow a print casts
 }
 
 @mixin palette-dark {
-  --bg:            #191612;   // warm near-black
+  --bg:            #17140f;   // warm near-black
   --bg-tint:       #231e17;
   --text:          #eae3d5;
   --muted:         #a3988a;
@@ -96,6 +103,9 @@ $narrow:      520px;
   --accent:        #e59070;   // terracotta: the rubric, warmed for a dark ground
   --accent-soft:   #8f5f4a;
   --selection:     #4a3a2c;
+  --grain:         0.07;
+  --grain-filter:  invert(1); // light specks on a dark ground
+  --plate:         rgba(0, 0, 0, 0.5);
 }
 
 :root { @include palette-light; color-scheme: light; }
