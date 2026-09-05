@@ -108,11 +108,10 @@ $grain-svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' wi
   --plate:         rgba(0, 0, 0, 0.5);
 }
 
-:root { @include palette-light; color-scheme: light; }
+// Dark is the default for every visitor, regardless of OS preference; the
+// toggle is what lets a reader opt into light, and that choice persists via
+// localStorage (see head.html's no-flash script and default.html's toggle).
+:root { @include palette-dark; color-scheme: dark; }
 
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) { @include palette-dark; color-scheme: dark; }
-}
-
-:root[data-theme="dark"]  { @include palette-dark;  color-scheme: dark; }
 :root[data-theme="light"] { @include palette-light; color-scheme: light; }
+:root[data-theme="dark"]  { @include palette-dark;  color-scheme: dark; }
