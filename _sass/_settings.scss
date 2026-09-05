@@ -30,49 +30,12 @@
   font-display: swap;
 }
 
-// Lato, by Łukasz Dziedzic (SIL Open Font License 1.1).
-// Tufte's preferred sans is Gill Sans, which is not freely licensed.
-// See assets/fonts/lato/OFL.txt
-
-@font-face {
-  font-family: "LatoLatin";
-  src: url("../fonts/lato/LatoLatin-Regular.woff2") format("woff2");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "LatoLatin";
-  src: url("../fonts/lato/LatoLatin-Italic.woff2") format("woff2");
-  font-weight: normal;
-  font-style: italic;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "LatoLatin";
-  src: url("../fonts/lato/LatoLatin-Bold.woff2") format("woff2");
-  font-weight: bold;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "LatoLatin";
-  src: url("../fonts/lato/LatoLatin-BoldItalic.woff2") format("woff2");
-  font-weight: bold;
-  font-style: italic;
-  font-display: swap;
-}
-
 $body-font: "et-book", Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
-$sans-font: "LatoLatin", Lato, "Gill Sans", "Gill Sans MT", "Trebuchet MS", sans-serif;
 $code-font: Consolas, "Liberation Mono", Menlo, "DejaVu Sans Mono", monospace;
 
-// Font for nav, labels, dates and other non-prose text.
-// jekyll-theme-tufte sets all of these in the serif, which is the look we copy.
-// Set this to $sans-font to put Lato back in those places instead.
+// Font for nav, labels, dates and other non-prose text. jekyll-theme-tufte
+// sets all of these in the serif, which is the look we copy -- ET Book for
+// everything, so $ui-font is just $body-font under another name.
 $ui-font: $body-font;
 
 // --- Layout ----------------------------------------------------------------

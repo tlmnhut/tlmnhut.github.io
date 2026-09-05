@@ -2,12 +2,9 @@
   <div class="wrap masthead-inner">
     <nav class="masthead-nav" aria-label="Main">
       {%- for item in site.data.navigation.main -%}
-        {%- assign is_active = false -%}
-        {%- if page.url == item.url -%}{%- assign is_active = true -%}{%- endif -%}
-        {%- if item.active_when and page.url contains item.active_when -%}{%- assign is_active = true -%}{%- endif -%}
       <a href="{{ item.url | relative_url }}"
          {%- if item.external %} target="_blank" rel="noopener"{% endif %}
-         {%- if is_active %} class="active" aria-current="page"{% endif %}>{{ item.title }}</a>
+         {%- if page.url == item.url %} class="active" aria-current="page"{% endif %}>{{ item.title }}</a>
       {%- endfor %}
     </nav>
     {% include theme-toggle.html %}

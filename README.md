@@ -4,8 +4,8 @@ Personal academic site for Nhut Truong — <https://tlmnhut.github.io>
 
 Jekyll, no theme gem. Typography is adapted from
 [Tufte CSS](https://github.com/edwardtufte/tufte-css) via
-[jekyll-theme-tufte](https://github.com/ab/jekyll-theme-tufte) (both MIT); ET Book (MIT) and
-Lato (SIL OFL) are self-hosted under `assets/fonts/`, with their licences alongside them.
+[jekyll-theme-tufte](https://github.com/ab/jekyll-theme-tufte) (both MIT); ET Book (MIT) is
+self-hosted under `assets/fonts/et-book/`, with its licence alongside it.
 
 ## Editing
 

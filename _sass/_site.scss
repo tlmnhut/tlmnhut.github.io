@@ -57,6 +57,8 @@
   row-gap: 0.4rem;
 
   a {
+    display: inline-block;
+    padding: 0.3rem 0;   // taller tap target than the bare text line-box
     font-family: $ui-font;
     font-size: 1.3rem;
     letter-spacing: 0.15em;
@@ -98,6 +100,14 @@
   svg { width: 17px; height: 17px; }
 
   .icon-moon { display: none; }
+}
+
+// A touch device gets a larger hit target regardless of viewport width; a
+// mouse pointer doesn't need the extra padding, so this targets touch
+// capability rather than a screen-size breakpoint. 17px icon + 2*0.9rem
+// padding lands close to the 44px touch-target minimum.
+@media (pointer: coarse) {
+  .theme-toggle { padding: 0.9rem; }
 }
 
 :root[data-theme="dark"] .theme-toggle {
@@ -182,7 +192,7 @@
   line-height: 2;
 
   li { padding-left: 0; margin-top: 0; }
-  a { white-space: nowrap; }
+  a { display: inline-block; white-space: nowrap; }   // taller tap target, still content-width
 }
 
 // --- Section headings ------------------------------------------------------

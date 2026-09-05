@@ -83,15 +83,6 @@ h4, h5, h6 {
   margin-bottom: 0.8rem;
 }
 
-// The italic serif subtitle that sits under a title.
-.subtitle {
-  font-style: italic;
-  font-size: 1.8rem;
-  line-height: 1.15;
-  margin-top: 1rem;
-  margin-bottom: 2rem;
-}
-
 // --- Body copy -------------------------------------------------------------
 
 p, ol, ul, dl {
@@ -155,9 +146,6 @@ a {
 }
 
 ::selection { background: var(--selection); }
-
-// Opt out for nav, buttons and other chrome.
-.plain-link { @include no-underline; }
 
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
   a { background-position-y: 87%, 87%, 87%; }
@@ -256,5 +244,4 @@ table {
   h1 { font-size: 2.4rem; }
   h2 { font-size: 1.8rem; }
   h3 { font-size: 1.5rem; }
-  .subtitle { font-size: 1.5rem; }
 }
