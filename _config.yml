@@ -12,7 +12,7 @@ timezone    : "Europe/Rome"
 
 author:
   name   : "Nhut Truong"
-  avatar : "nhut_july24.jpg"
+  avatar : "profile_photo.jpg"
   # One line per line of the affiliation block under your name.
   bio:
     - "Researcher in Computational Cognitive Science"
