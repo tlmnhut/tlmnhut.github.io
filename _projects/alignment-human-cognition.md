@@ -1,5 +1,5 @@
 ---
-title: "Alignment of AI models with human cognition"
+title: "Human-AI alignment"
 years: ""
 order: 2
 summary: >-
