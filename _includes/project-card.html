@@ -1,21 +1,12 @@
 {%- comment -%}
-  One research theme: an image on the left, title and text on the right.
-  Expects include.project. Title and summary are wrapped in .project-body so
-  they are one grid item and flow together, instead of landing in separate
-  grid rows with the image's height between them.
+  One research theme: the title hangs in the left rail, the summary sits in the
+  text column beside it -- the same shape as a news item's date and body.
+  Expects include.project.
 {%- endcomment -%}
 {%- assign p = include.project -%}
 <article class="project">
-  {%- if p.image %}
-  <div class="project-image">
-    <img src="{{ p.image | prepend: '/images/' | relative_url }}"
-         alt="{{ p.image_alt | default: p.title }}" loading="lazy">
-  </div>
+  <h3 class="project-title">{{ p.title }}</h3>
+  {%- if p.summary %}
+  <p class="project-summary">{{ p.summary | markdownify | remove: '<p>' | remove: '</p>' | strip }}</p>
   {%- endif %}
-  <div class="project-body">
-    <h3 class="project-title">{{ p.title }}</h3>
-    {%- if p.summary %}
-    <p class="project-summary">{{ p.summary | markdownify | remove: '<p>' | remove: '</p>' | strip }}</p>
-    {%- endif %}
-  </div>
 </article>

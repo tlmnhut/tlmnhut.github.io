@@ -1,6 +1,5 @@
 ---
 title: "Alignment of AI models with human cognition"
-image: "research-alignment-human-cognition.svg"   # placeholder - swap for a real figure
 years: "2023 – present"
 order: 2
 summary: >-

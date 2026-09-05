@@ -1,6 +1,5 @@
 ---
 title: "Numerosity in AI models"
-image: "research-numerosity.svg"   # placeholder - swap for a real figure
 years: "2026 – present"
 order: 3
 # PLACEHOLDER TEXT - rewrite before publishing.

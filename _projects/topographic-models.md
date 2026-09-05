@@ -1,6 +1,5 @@
 ---
 title: "Topographic models"
-image: "research-topographic-models.svg"   # placeholder - swap for a real figure
 years: "2024 – present"
 order: 1
 summary: >-
