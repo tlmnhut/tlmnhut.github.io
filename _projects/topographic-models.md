@@ -15,9 +15,10 @@ papers:
       doi: "https://www.nature.com/articles/s41467-025-67855-6"
   - authors: "**Truong, N.**, & Hasson, U."
     title: "Beyond topography: Topographic regularization improves robustness and reshapes representations in convolutional neural networks"
-    venue: "arXiv preprint"
-    year: 2025
+    venue: "Neurocomputing"
+    year: 2026
     links:
+      doi: "https://doi.org/10.1016/j.neucom.2026.134496"
       arxiv: "https://arxiv.org/abs/2508.00043"
   - authors: "**Truong, N.**, & Hasson, U."
     title: "Weight-similarity topographic networks improve retinotopy and noise robustness"

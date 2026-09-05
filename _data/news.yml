@@ -1,17 +1,17 @@
 # Newest first is handled by the template; order here does not matter.
-- date: 2025-12-21
+- date: 2026-08-03
   text: >-
-    The paper [Investigating action topography in visual cortex and deep artificial neural
-    networks](https://www.nature.com/articles/s41467-025-67855-6), a work with
-    [Davide Cortinovis](https://davidecortinovis-droid.github.io/), passed Nature Communications!
+    I started my postdoc with professor Stefania Bracci, using topographic
+    models and fMRI to study action representation in the visual cortex.
 
-- date: 2025-12-10
+- date: 2026-07-12
   text: >-
-    The paper of [Anna Bavaresco](https://annabavaresco.github.io/) in which I am a coauthor —
-    [Modeling Human Concepts with Subspaces in Deep Vision Models](https://doi.org/10.1145/3768340) —
-    was accepted in the ACM Transactions on Interactive Intelligent Systems (TIIS).
+    My paper with my advisor —
+    [Beyond topography: Topographic regularization improves robustness and reshapes
+    representations in convolutional neural networks](https://doi.org/10.1016/j.neucom.2026.134496) —
+    was accepted in Neurocomputing.
 
-- date: 2025-08-04
+- date: 2026-04-24
   text: >-
-    My preprint [Improved Robustness and Functional Localization in Topographic CNNs Through
-    Weight Similarity](https://arxiv.org/abs/2508.00043) is uploaded!
+    I successfully defended my PhD thesis,
+    [Modeling Cognition by Pruning and Topography-Learning in Deep Neural Networks](https://tesidottorato.depositolegale.it/bitstream/20.500.14242/367009/1/Nhut_thesis_v2.pdf)!
