@@ -226,7 +226,7 @@
 .section-title-aux {
   font-style: italic;
   font-weight: 400;
-  font-size: 1.05rem;
+  font-size: 1.2rem;
   letter-spacing: normal;
   text-transform: none;
   color: var(--muted);
@@ -292,8 +292,8 @@
 .project-cites {
   margin: 0.7rem 0 0;
   font-style: italic;
-  font-size: 1.05rem;
-  line-height: 1.6;
+  font-size: 1.2rem;
+  line-height: 1.65;
   color: var(--muted);
 
   a { color: inherit; @include no-underline; }
