@@ -9,6 +9,5 @@
   {%- if p.summary %}
   <p class="project-summary">{{ p.summary | markdownify | remove: '<p>' | remove: '</p>' | strip }}</p>
   {%- endif %}
-  {%- assign featured = p.papers | where: "featured", true -%}
-  {%- if featured.size > 0 %}{% include paper-cites.html papers=featured %}{% endif %}
+  {%- if p.papers %}{% include paper-cites.html papers=p.papers %}{% endif %}
 </article>

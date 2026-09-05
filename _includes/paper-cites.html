@@ -1,9 +1,9 @@
 {%- comment -%}
   A compact "see also" line: venue and year per paper, each linking to its
   paper -- no author names or titles, just enough to place the work. Expects
-  include.papers, already filtered down to the ones worth surfacing here (see
-  project-card.html, which passes only papers marked `featured: true`).
-  Link priority: doi, then arxiv, then pdf, then html.
+  include.papers; a theme's papers: list is exactly what's shown here, so add
+  or drop an entry there to change the line. Link priority: doi, then arxiv,
+  then pdf, then html.
 {%- endcomment -%}
 <p class="project-cites">
   {%- for paper in include.papers -%}
