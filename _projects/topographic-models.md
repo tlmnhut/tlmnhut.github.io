@@ -1,10 +1,9 @@
 ---
 title: "Topographic models"
-years: "2024 – present"
+years: ""
 order: 1
 summary: >-
-  Deep neural networks that simulate the spatial and functional organization of the brain, built to be
-  more biologically plausible models of cognition.
+  Deep neural networks that simulate the spatial and functional organization of the brain.
 papers:
   - authors: "**Truong, N.**, & Hasson, U."
     title: "Beyond topography: Topographic regularization improves robustness and reshapes representations in convolutional neural networks"

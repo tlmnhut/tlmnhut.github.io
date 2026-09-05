@@ -1,10 +1,10 @@
 ---
 title: "Numerosity in AI models"
-years: "2026 – present"
+years: ""
 order: 3
 # PLACEHOLDER TEXT - rewrite before publishing.
 summary: >-
-  How deep neural networks encode number sense.
+  How deep neural networks encode human number sense.
 papers:
   - authors: "Karami, A., **Truong, N.**, & Piazza, M."
     title: "Investigation of numerosity representation in convolution neural networks"
