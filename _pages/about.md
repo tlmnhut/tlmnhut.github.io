@@ -10,12 +10,11 @@ redirect_from:
 
 I am a postdoctoral researcher in computational cognitive science, working in the Object Vision
 Group led by professor [Stefania Bracci](https://webapps.unitn.it/du/en/Persona/PER0076943/Curriculum)
-at the Center for Mind/Brain Sciences ([CIMeC](https://www.cimec.unitn.it/en)), University of
-[Trento](https://www.unitn.it/en).
+at the University of [Trento](https://www.cimec.unitn.it/en).
 
 My research is at the intersection of AI and cognitive science. I am interested in using deep
-learning to model aspects of human cognition, such as cortical topography, the alignment between
-models and humans, and the sense of number.
+learning to model aspects of human cognition, such as [cortical topography](#research), [the alignment
+between models and humans](#research), and [the sense of number](#research).
 
 Before that, I completed my PhD at the same university, advised by professor
 [Uri Hasson](http://hasson.org/), with a thesis titled
