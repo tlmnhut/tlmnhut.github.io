@@ -16,7 +16,7 @@
 .content-grid > .news-item,
 .content-grid > .project      { grid-column: 1 / -1; }   // own the full row
 
-.profile   > .profile-photo   { grid-column: 1; }
+.profile   > .profile-aside   { grid-column: 1; }
 .profile   > .profile-body    { grid-column: 2; }
 .news-item > .news-date       { grid-column: 1; }
 .news-item > .news-body       { grid-column: 2; }
@@ -29,7 +29,7 @@
   .content-grid > .profile,
   .content-grid > .news-item,
   .content-grid > .project,
-  .profile   > .profile-photo,
+  .profile   > .profile-aside,
   .profile   > .profile-body,
   .news-item > .news-date,
   .news-item > .news-body,
@@ -135,8 +135,9 @@
   margin-bottom: 1.4rem;
 }
 
+.profile-aside { align-self: start; }
+
 .profile-photo {
-  align-self: start;        // photo keeps its own height
   width: 100%;
 
   img {
@@ -145,12 +146,13 @@
   }
 }
 
-// Flex column so the links can be pushed to the foot of the row, level with
-// the bottom of the photo.
-.profile-body {
-  min-width: 0;
-  display: flex;
-  flex-direction: column;
+.profile-body { min-width: 0; }
+
+// Bio sits under the affiliation, still inside the right-hand column.
+.intro {
+  margin-top: 1.6rem;
+
+  > :first-child { margin-top: 0; }
 }
 
 .profile-name {
@@ -166,18 +168,18 @@
   margin: 0 0 1.1rem;
 }
 
+// One link per line, stacked under the photo so the left column carries
+// something alongside the bio instead of running empty.
 .profile-links {
-  // Pushed to the bottom of the body, level with the foot of the photo.
-  margin: auto 0 0;
+  list-style: none;
+  margin: 0.9rem 0 0;
+  padding: 0;
   font-family: $ui-font;
-  font-size: 1.15rem;
-  line-height: 1.85;
-  max-width: $measure;
+  font-size: 1.18rem;
+  line-height: 1.75;
 
-  // Never break a service name across lines.
+  li { padding-left: 0; margin-top: 0; }
   a { white-space: nowrap; }
-
-  .sep { color: var(--muted); margin: 0 0.4rem; }
 }
 
 // --- Section headings ------------------------------------------------------
@@ -281,12 +283,17 @@
 // Stacked: each image sits above the text it belongs to, at a size that does
 // not dominate a small screen.
 @media (max-width: $two-col-min) {
-  .profile, .project, .news-item { @include one-col; }
+  .project, .news-item { @include one-col; }
+
+  // Stacked, the links belong after the name rather than between the photo and
+  // it, so the aside dissolves and its two children are ordered directly.
+  .profile { display: flex; flex-direction: column; }
+  .profile-aside { display: contents; }
+  .profile-photo { order: 1; width: 150px; margin-bottom: 1.4rem; }
+  .profile-body  { order: 2; }
+  .profile-links { order: 3; margin-top: 1.3rem; }
   .news-date { display: block; padding-top: 0; margin-bottom: 0.35rem; }
   .news-item { margin-bottom: 2rem; }
-  .profile-photo { width: 150px; margin-bottom: 1.4rem; }
-  .profile-body  { display: block; }
-  .profile-links { margin-top: 1rem; }
   .project-image { width: 100%; max-width: 320px; margin-bottom: 1rem; }
 }
 

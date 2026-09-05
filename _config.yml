@@ -13,7 +13,11 @@ timezone    : "Europe/Rome"
 author:
   name   : "Nhut Truong"
   avatar : "nhut_july24.jpg"
-  bio    : "Researcher in Computational Cognitive Science, the University of Trento"
+  # One line per line of the affiliation block under your name.
+  bio:
+    - "Researcher in Computational Cognitive Science"
+    - "Object Vision Group"
+    - "University of Trento"
 
 google_site_verification: "dSlV_xTOsJ1MohsYy6Aqr3c8SHEl3N2gBDEO83P2KyA"
 

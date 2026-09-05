@@ -1,18 +1,31 @@
 {%- comment -%}
-  Photo first, so the DOM order matches the visual order in both the two-column
-  grid and the stacked layout. Links live inside .profile-body so the body can
-  stretch to the photo's height and push them level with its bottom edge.
+  Left column: photo, then the academic links stacked under it, filling the
+  space beside the bio. Right column: name and affiliation.
 {%- endcomment -%}
 <div class="profile">
-  <div class="profile-photo">
-    <img src="{{ site.author.avatar | prepend: '/images/' | relative_url }}"
-         alt="{{ site.author.name }}" width="1059" height="1060" fetchpriority="high">
-  </div>
+  <aside class="profile-aside">
+    <div class="profile-photo">
+      <img src="{{ site.author.avatar | prepend: '/images/' | relative_url }}"
+           alt="{{ site.author.name }}" width="1059" height="1060" fetchpriority="high">
+    </div>
+    <ul class="profile-links">
+      {%- for item in site.data.navigation.academic %}
+      <li><a href="{{ item.url }}"{% unless item.url contains 'mailto:' %} target="_blank" rel="noopener"{% endunless %}>{{ item.title }}</a></li>
+      {%- endfor %}
+    </ul>
+  </aside>
   <div class="profile-body">
     <h1 class="profile-name">{{ site.author.name }}</h1>
-    <p class="profile-affiliation">{{ site.author.bio }}</p>
-    <p class="profile-links">
-      {% for item in site.data.navigation.academic %}{% unless forloop.first %} <span class="sep">&middot;</span> {% endunless %}<a href="{{ item.url }}"{% unless item.url contains 'mailto:' %} target="_blank" rel="noopener"{% endunless %}>{{ item.title }}</a>{% endfor %}
+    <p class="profile-affiliation">
+      {%- comment -%} bio is a list of lines; a plain string still works. {%- endcomment -%}
+      {%- if site.author.bio.first -%}
+        {%- for line in site.author.bio %}{{ line }}{% unless forloop.last %}<br>{% endunless %}{% endfor -%}
+      {%- else -%}
+        {{ site.author.bio }}
+      {%- endif -%}
     </p>
+    {%- if include.intro %}
+    <div class="intro">{{ include.intro }}</div>
+    {%- endif %}
   </div>
 </div>

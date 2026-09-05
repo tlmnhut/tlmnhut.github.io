@@ -1,11 +1,11 @@
 ---
 layout: default
 ---
-{% include profile.html %}
-
-<div class="intro">
-{{ content }}
-</div>
+{%- comment -%}
+  The bio is passed into the profile so it sits inside the right-hand column,
+  beside the photo and links rather than starting on a row below them.
+{%- endcomment -%}
+{% include profile.html intro=content %}
 
 {%- assign news = site.data.news | sort: 'date' | reverse %}
 {%- if news.size > 0 %}
